@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Product Manager Is Often the Least Powerful Person in the Room — Jose Simon Muck</title>
+<meta name="description" content="Modern product discourse often talks about ownership and empowerment. In practice, many product managers operate with responsibility but very limited actual authority.">
+<meta property="og:title" content="The Product Manager Is Often the Least Powerful Person in the Room — Jose Simon Muck">
+<meta property="og:description" content="Effective PMs frequently succeed through alignment rather than authority. That work is often invisible — but in complex organizations, it is usually essential.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0a0f1e;--graphite:#141c2e;--off-white:#f0ece4;--muted:#8a9ab8;--green:#4ade80;--border:#1e2a44;--border-light:#253048}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--off-white);font-size:16px;line-height:1.7}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,15,30,0.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.04)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;letter-spacing:0.12em;color:var(--off-white);text-decoration:none;text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--green)}
+.article-header{padding:8rem 3rem 4rem;max-width:860px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2.5rem;transition:color 0.2s}
+.back-link:hover{color:var(--green)}
+.article-category{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.75rem}
+.cat-line{width:20px;height:1px;background:var(--green)}
+.article-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.1;color:var(--off-white);margin-bottom:2rem}
+.article-lead{font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:rgba(240,236,228,0.88);line-height:1.78;border-left:2px solid var(--green);padding-left:1.5rem;margin-bottom:2.5rem;max-width:660px}
+.article-meta{display:flex;align-items:center;gap:1rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.meta-divider{width:1px;height:12px;background:var(--border-light)}
+.meta-item{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.1em}
+.article-body{max-width:680px;margin:0 auto;padding:3rem 3rem 6rem}
+.article-body p{color:rgba(240,236,228,0.78);margin-bottom:1.6rem;font-size:1.05rem;line-height:1.88}
+.article-body ul{list-style:none;margin-bottom:1.6rem}
+.article-body ul li{font-size:1rem;color:rgba(240,236,228,0.7);padding:0.3rem 0 0.3rem 1.5rem;position:relative;line-height:1.7}
+.article-body ul li::before{content:'→';position:absolute;left:0;color:var(--green);font-size:0.85rem}
+.flow-list{border-left:1px solid var(--border-light);padding-left:1.5rem;margin-bottom:1.6rem}
+.flow-list li{font-size:0.97rem;color:rgba(240,236,228,0.62);padding:0.12rem 0;line-height:1.78;list-style:none}
+.flow-list li::before{display:none !important}
+.trio{color:rgba(240,236,228,0.72);font-size:1.05rem;line-height:2.1;margin-bottom:1.6rem}
+.emphasis{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(240,236,228,0.88);line-height:1.75;margin-bottom:1.6rem}
+.article-signature{max-width:680px;margin:0 auto;padding:0 3rem 6rem}
+.signature-inner{border-top:1px solid var(--border);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.sig-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--off-white);font-weight:500}
+.sig-role{font-size:0.78rem;color:var(--muted);margin-top:0.2rem}
+.sig-link{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);text-decoration:none;transition:opacity 0.2s;white-space:nowrap}
+.sig-link:hover{opacity:0.7}
+footer{background:var(--graphite);border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between}
+.footer-name{font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--muted);letter-spacing:0.08em}
+.footer-tagline{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(138,154,184,0.5)}
+@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}.article-header{padding:6rem 1.5rem 3rem}.article-body,.article-signature{padding-left:1.5rem;padding-right:1.5rem}footer{flex-direction:column;gap:0.5rem;text-align:center}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">JSM</a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#experience">Experience</a></li>
+    <li><a href="/#footprint">Footprint</a></li>
+    <li><a href="/#impact">Impact</a></li>
+    <li><a href="/#insights">Insights</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="article-header">
+  <a href="/#insights" class="back-link">← Selected Perspectives</a>
+  <div class="article-category"><span class="cat-line"></span>Product Leadership · Organizations · Influence</div>
+  <h1 class="article-title">The Product Manager Is Often the Least Powerful Person in the Room</h1>
+  <p class="article-lead">Modern product discourse often talks about ownership and empowerment. In practice, many product managers operate with responsibility but very limited actual authority.</p>
+  <div class="article-meta">
+    <span class="meta-item">Jose Simon Muck</span>
+    <div class="meta-divider"></div>
+    <span class="meta-item">4 min read</span>
+    <div class="meta-divider"></div>
+    <span class="meta-item">2025</span>
+  </div>
+</div>
+
+<div class="article-body">
+  <p>One of the strange realities of product management is that product managers are often held accountable for outcomes they do not fully control.</p>
+
+  <ul class="flow-list">
+    <li>Roadmaps</li>
+    <li>Delivery</li>
+    <li>Alignment</li>
+    <li>Strategy</li>
+    <li>Execution</li>
+    <li>Stakeholder management</li>
+    <li>Customer impact</li>
+  </ul>
+
+  <p>At the same time, many PMs lack direct authority over:</p>
+  <ul class="flow-list">
+    <li>engineering</li>
+    <li>design</li>
+    <li>sales</li>
+    <li>operations</li>
+    <li>marketing</li>
+    <li>or executive decision-making</li>
+  </ul>
+
+  <p>This creates an unusual leadership challenge.</p>
+
+  <p>The role depends heavily on influence without authority.</p>
+
+  <p>And in large organizations, that influence becomes increasingly difficult as complexity grows.</p>
+
+  <p>Many modern product discussions underestimate how political organizations actually are. Not political in the dramatic sense. Political in the structural sense.</p>
+
+  <p>Every organization contains:</p>
+  <ul class="flow-list">
+    <li>competing incentives</li>
+    <li>resource constraints</li>
+    <li>departmental priorities</li>
+    <li>leadership agendas</li>
+    <li>and differing definitions of success</li>
+  </ul>
+
+  <p>Product managers often sit directly in the middle of those tensions.</p>
+
+  <p>This becomes especially visible in international environments, where additional layers emerge:</p>
+  <ul>
+    <li>local market pressure</li>
+    <li>regional priorities</li>
+    <li>language barriers</li>
+    <li>and cultural differences in communication and hierarchy</li>
+  </ul>
+
+  <p>A PM trying to align teams across multiple countries is not simply managing backlog priorities. They are navigating organizational complexity in real time.</p>
+
+  <p>This is one reason why I believe some of the most important product skills are rarely discussed enough:</p>
+  <ul>
+    <li>influence</li>
+    <li>communication</li>
+    <li>trust-building</li>
+    <li>organizational awareness</li>
+    <li>and strategic simplification</li>
+  </ul>
+
+  <p>Not every problem is a prioritization problem. Sometimes the organization itself is the bottleneck.</p>
+
+  <p>And this is where simplistic product narratives can become frustrating.</p>
+
+  <p>Because many PMs are told: "Act like a CEO of the product."</p>
+
+  <p>But CEOs usually control:</p>
+  <ul class="flow-list">
+    <li>budget</li>
+    <li>incentives</li>
+    <li>organizational structure</li>
+    <li>hiring</li>
+    <li>and strategic direction</li>
+  </ul>
+
+  <p>Most PMs control almost none of those things.</p>
+
+  <p>The comparison sounds empowering, but often ignores operational reality.</p>
+
+  <p>This does not make product management less important. If anything, it makes strong product leadership even more impressive.</p>
+
+  <p>Because effective PMs frequently succeed through alignment rather than authority.</p>
+
+  <ul class="flow-list">
+    <li>They connect teams</li>
+    <li>Reduce ambiguity</li>
+    <li>Create clarity</li>
+    <li>Navigate trade-offs</li>
+    <li>Build trust</li>
+    <li>Translate priorities</li>
+    <li>And help organizations move despite structural friction</li>
+  </ul>
+
+  <p>That work is often invisible.</p>
+
+  <p class="emphasis">But in complex organizations, it is usually essential.</p>
+</div>
+
+<div class="article-signature">
+  <div class="signature-inner">
+    <div>
+      <div class="sig-name">Jose Simon Muck</div>
+      <div class="sig-role">Product & Digital Transformation Leader · Düsseldorf, Germany</div>
+    </div>
+    <a href="/" class="sig-link">View full profile →</a>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <svg width="40" height="26" viewBox="0 0 40 26" fill="none" style="display:block;margin-bottom:6px">
+      <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
+    </svg>
+    <div class="footer-name">Jose Simon Muck</div>
+  </div>
+  <div class="footer-tagline">Strategy · People · Growth · International Execution</div>
+  <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
+</footer>
+</body>
+</html>
