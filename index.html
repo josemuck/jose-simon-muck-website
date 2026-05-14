@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jose Simon Muck | Product & Digital Transformation Leader</title>
-<meta name="description" content="International digital product and transformation leader connecting strategy, people, growth, and execution across Europe, LATAM, the Middle East, and the United States.">
+<meta name="description" content="International strategic leader connecting product, growth, transformation and execution across 30+ international markets.">
 <meta property="og:title" content="Jose Simon Muck | Product & Digital Transformation Leader">
-<meta property="og:description" content="International digital leader connecting product, people, and growth across Europe, LATAM, the Middle East, and the United States.">
+<meta property="og:description" content="International strategic operator connecting product leadership, digital transformation, and execution across 30+ markets.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jose Simon Muck | Product & Digital Transformation Leader">
-<meta name="twitter:description" content="International digital product and transformation leader. Strategy. People. Growth. International Execution.">
+<meta name="twitter:description" content="International strategic leader. Product. Transformation. Growth. Execution across 30+ markets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
@@ -561,6 +561,36 @@ section{padding:6rem 3rem}
   border-radius:2px;
 }
 
+/* IMPACT — KPI cards */
+.impact-grid-5{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:2px;
+  overflow:hidden;
+}
+.impact-grid-5 .impact-card:nth-child(-n+3){grid-column:span 2}
+.impact-grid-5 .impact-card:nth-child(n+4){grid-column:span 3}
+.impact-stat{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  font-weight:600;
+  color:var(--green);
+  line-height:1;
+  margin-bottom:0.5rem;
+}
+.impact-stat-label{
+  font-size:0.68rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--off-white);
+  padding-bottom:1.25rem;
+  margin-bottom:1.25rem;
+  border-bottom:1px solid var(--border);
+}
+
 /* INSIGHTS */
 #insights{background:var(--navy)}
 .insights-subtitle{
@@ -618,6 +648,48 @@ section{padding:6rem 3rem}
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:1.5rem;
+}
+
+/* PERSPECTIVE */
+#perspective{background:var(--graphite)}
+.perspective-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;
+  align-items:start;
+}
+.perspective-text p{
+  color:rgba(240,236,228,0.75);
+  margin-bottom:1.25rem;
+  font-size:1rem;
+  line-height:1.85;
+}
+.perspective-text p:first-child{
+  font-family:'Playfair Display',serif;
+  font-size:1.15rem;
+  font-style:italic;
+  color:rgba(240,236,228,0.9);
+}
+.perspective-aside{
+  padding-top:0.5rem;
+}
+.perspective-item{
+  display:flex;
+  align-items:flex-start;
+  gap:0.85rem;
+  padding:0.9rem 0;
+  border-bottom:1px solid var(--border);
+  font-size:0.875rem;
+  color:rgba(240,236,228,0.72);
+  line-height:1.5;
+}
+.perspective-item:first-child{border-top:1px solid var(--border)}
+.perspective-dot{
+  width:4px;height:4px;
+  border-radius:50%;
+  background:var(--green);
+  flex-shrink:0;
+  margin-top:0.55rem;
 }
 
 /* CONTACT */
@@ -682,6 +754,9 @@ footer{
   .about-grid{grid-template-columns:1fr}
   .pillars-grid{grid-template-columns:1fr 1fr}
   .impact-grid{grid-template-columns:1fr}
+  .impact-grid-5{grid-template-columns:repeat(2,1fr)}
+  .impact-grid-5 .impact-card:nth-child(-n+3){grid-column:span 1}
+  .impact-grid-5 .impact-card:nth-child(n+4){grid-column:span 1}
   .insights-grid{grid-template-columns:1fr 1fr}
   .insights-grid-3{grid-template-columns:1fr 1fr}
   .exp-item{grid-template-columns:1fr;gap:0.5rem}
@@ -690,12 +765,16 @@ footer{
   footer{flex-direction:column;gap:0.5rem;text-align:center}
   .region-grid{grid-template-columns:1fr 1fr}
   .footprint-visual{grid-template-columns:1fr}
+  .perspective-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .pillars-grid{grid-template-columns:1fr}
   .insights-grid{grid-template-columns:1fr}
   .insights-grid-3{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:1fr 1fr}
+  .impact-grid-5{grid-template-columns:1fr}
+  .impact-grid-5 .impact-card:nth-child(-n+3){grid-column:span 1}
+  .impact-grid-5 .impact-card:nth-child(n+4){grid-column:span 1}
   .region-grid{grid-template-columns:1fr}
 }
 </style>
@@ -710,6 +789,7 @@ footer{
     <li><a href="#experience">Experience</a></li>
     <li><a href="#footprint">Footprint</a></li>
     <li><a href="#impact">Impact</a></li>
+    <li><a href="#perspective">Perspective</a></li>
     <li><a href="#insights">Insights</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -730,7 +810,7 @@ footer{
     <div class="hero-role">Product & Digital Transformation Leader</div>
     <div class="hero-tagline">Strategy · People · Growth · International Execution</div>
 
-    <p class="hero-desc">I help organizations turn strategic ambition into scalable digital execution across markets.</p>
+    <p class="hero-desc">Strategic operator connecting product leadership, digital transformation, and international execution — across startups, SaaS, fintech, and multinational organizations.</p>
 
     <div class="hero-ctas">
       <a href="#experience" class="btn-primary">View Experience</a>
@@ -748,7 +828,7 @@ footer{
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <span class="hero-stat-num">25+</span>
+        <span class="hero-stat-num">30+</span>
         <span class="hero-stat-label">Markets</span>
       </div>
       <div class="hero-stat">
@@ -756,8 +836,8 @@ footer{
         <span class="hero-stat-label">Years</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-num">200M+</span>
-        <span class="hero-stat-label">USD in payments</span>
+        <span class="hero-stat-num">200+</span>
+        <span class="hero-stat-label">People led</span>
       </div>
     </div>
   </div>
@@ -771,23 +851,23 @@ footer{
   </div>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>Jose Simon Muck connects strategy, people, and execution across markets. He builds high-performing digital operations and leads transformation in complex, international environments.</p>
-      <p>His career combines strategic and creative thinking with a deep ability to align people, translate complexity into direction, and turn cross-functional teams into high-performing execution engines. From leading a fintech company at CEO level to scaling a B2B SaaS forecasting product used by 350,000+ workers across 33 countries, Jose has consistently operated at the intersection of product, growth, and organizational leadership.</p>
-      <p>At ista, he leads international digital strategy and governance for online platforms across 20+ markets — orchestrating a complex ecosystem of UX, SEO, content, analytics, and local market stakeholders into coherent, scalable execution.</p>
-      <p>Based in Germany with a European and Latin American perspective, Jose brings a genuinely international lens to every challenge he takes on.</p>
+      <p>Jose Simon Muck is a strategic operator and transformation leader who connects product, people, and execution across international organizations.</p>
+      <p>With 18+ years across startups, fintech, B2B SaaS, creative agencies, and multinational enterprise, his work sits at the intersection of product leadership, digital transformation, and organizational orchestration. From executive leadership within one of Peru's most significant fintech ecosystems, to scaling AI-powered SaaS platforms and directing international digital transformation across 30+ markets — Jose has consistently built, scaled, and transformed digital operations in complex organizational environments.</p>
+      <p>Experienced leading across multilingual and multicultural environments in English, German and Spanish. With a German-Latin American background, Jose navigates different cultural expectations, communication styles, and leadership realities as a genuine operational advantage — not a footnote.</p>
+      <p>Currently leading international digital strategy and product ownership at ista, orchestrating cross-market digital execution across Europe and the Middle East.</p>
     </div>
     <div class="about-sidebar reveal">
       <div class="about-kpi">
-        <span class="about-kpi-num">20+</span>
-        <span class="about-kpi-label">Markets operating across at ista</span>
+        <span class="about-kpi-num">18+</span>
+        <span class="about-kpi-label">Years leading internationally</span>
       </div>
       <div class="about-kpi">
-        <span class="about-kpi-num">350K+</span>
-        <span class="about-kpi-label">Workers supported through SaaS platform</span>
+        <span class="about-kpi-num">30+</span>
+        <span class="about-kpi-label">International markets</span>
       </div>
       <div class="about-kpi">
         <span class="about-kpi-num">CEO</span>
-        <span class="about-kpi-label">Level ownership at Culqi / CREDICORP fintech</span>
+        <span class="about-kpi-label">Fintech executive leadership · Krealo · CREDICORP</span>
       </div>
       <div class="cert-list">
         <div class="cert-item"><div class="cert-dot"></div><span>Professional SCRUM Product Owner · Scrum.org</span></div>
@@ -867,7 +947,7 @@ footer{
   </div>
   <div class="reveal">
     <p class="section-title">International Operating Footprint</p>
-    <p class="footprint-intro">Experience aligning teams, stakeholders, and digital initiatives across 25+ markets in Europe, LATAM, the Middle East, and the United States.</p>
+    <p class="footprint-intro">Experience aligning teams, stakeholders, and digital initiatives across 30+ international markets. Across Europe, LATAM, the Middle East and the United States.</p>
   </div>
 
   <div class="region-grid reveal">
@@ -950,15 +1030,15 @@ footer{
         <text x="65" y="135" text-anchor="middle" font-size="7.5" fill="rgba(74,222,128,0.5)" font-family="DM Mono,monospace" letter-spacing="1">N. AMERICA</text>
         <text x="65" y="147" text-anchor="middle" font-size="7" fill="rgba(74,222,128,0.3)" font-family="DM Mono,monospace">1 market</text>
         <!-- Decorative label -->
-        <text x="490" y="58" text-anchor="middle" font-size="38" fill="rgba(74,222,128,0.07)" font-family="Playfair Display,serif" font-weight="600">25+</text>
+        <text x="490" y="58" text-anchor="middle" font-size="38" fill="rgba(74,222,128,0.07)" font-family="Playfair Display,serif" font-weight="600">30+</text>
         <text x="490" y="76" text-anchor="middle" font-size="7" fill="rgba(74,222,128,0.18)" font-family="DM Mono,monospace" letter-spacing="3">MARKETS</text>
         <text x="490" y="108" text-anchor="middle" font-size="7" fill="rgba(74,222,128,0.12)" font-family="DM Mono,monospace" letter-spacing="2">4 REGIONS</text>
       </svg>
     </div>
     <div class="footprint-kpis">
       <div class="fp-kpi">
-        <span class="fp-kpi-num">25+</span>
-        <span class="fp-kpi-label">Markets</span>
+        <span class="fp-kpi-num">30+</span>
+        <span class="fp-kpi-label">International markets</span>
       </div>
       <div class="fp-kpi">
         <span class="fp-kpi-num">4</span>
@@ -969,8 +1049,8 @@ footer{
         <span class="fp-kpi-label">Years leading internationally</span>
       </div>
       <div class="fp-kpi">
-        <span class="fp-kpi-num">33</span>
-        <span class="fp-kpi-label">Countries via SaaS platform</span>
+        <span class="fp-kpi-num">3</span>
+        <span class="fp-kpi-label">Languages of operation</span>
       </div>
     </div>
   </div>
@@ -991,12 +1071,12 @@ footer{
       </div>
       <div class="exp-content">
         <div class="exp-role">Senior Manager, Marketing Solutions & Product Owner — International Digital</div>
-        <p class="exp-desc">Product Owner for international digital sales and services platforms across 20 markets, responsible for strategy, governance, and evolution of ista's core web presence in Europe and the Middle East.</p>
+        <p class="exp-desc">Product Owner for international digital platforms across Europe and the Middle East — responsible for strategy, governance, and cross-market evolution of ista's core digital presence.</p>
         <ul class="exp-bullets">
-          <li>Own product direction and governance for multi-country B2B digital platforms</li>
-          <li>Lead cross-functional execution across UX/UI, SEO, content, analytics, and local market stakeholders</li>
+          <li>Own product direction and governance for multi-market B2B digital platforms across multiple regions</li>
+          <li>Lead cross-functional execution across UX/UI, SEO, content, analytics, and international market stakeholders</li>
           <li>Drive data-informed decision-making to improve customer journeys and lead generation at international scale</li>
-          <li>Led ista IGNITE international digital summit to align 21 markets on the 2025 digital roadmap</li>
+          <li>Conceived and led ista IGNITE — an international digital summit aligning markets across Europe and the Middle East on a shared digital strategy and roadmap</li>
         </ul>
       </div>
     </div>
@@ -1007,11 +1087,11 @@ footer{
       </div>
       <div class="exp-content">
         <div class="exp-role">Senior Product Manager — Peopleware Forecasting (injixo)</div>
-        <p class="exp-desc">Senior PM for an AI-powered predictive analytics module within a B2B Workforce Management SaaS platform, supporting workforce planning for 350,000+ workers across 33 countries.</p>
+        <p class="exp-desc">Senior PM for an AI-powered predictive analytics module within a global B2B Workforce Management SaaS platform — supporting enterprise-scale workforce planning operations across international markets.</p>
         <ul class="exp-bullets">
           <li>End-to-end product ownership: discovery, roadmap, delivery, and global scaling</li>
           <li>Led cross-functional collaboration across product, data science, engineering, and commercial teams</li>
-          <li>Evolved machine-learning–based forecasting into a core revenue-impacting product capability</li>
+          <li>Evolved machine-learning–based forecasting from a supporting feature into a core revenue-impacting product capability</li>
         </ul>
       </div>
     </div>
@@ -1022,11 +1102,11 @@ footer{
       </div>
       <div class="exp-content">
         <div class="exp-role">Chief Executive Officer — Culqi FinTech (Krealo / CREDICORP)</div>
-        <p class="exp-desc">CEO of Culqi, a B2B FinTech and payments platform within Krealo, CREDICORP's corporate venture arm. Full ownership of company strategy, product portfolio, and business performance.</p>
+        <p class="exp-desc">CEO-level ownership within one of Peru's most significant fintech ecosystems — Culqi, a B2B payments platform operating within Krealo, CREDICORP's corporate venture arm. Full accountability for strategy, product portfolio, and business performance.</p>
         <ul class="exp-bullets">
-          <li>Led evolution from online payments into a full omnichannel platform (online, mobile, card-present POS)</li>
-          <li>Oversaw payment products processing USD 200M+ annually</li>
-          <li>Operated at board and executive level, aligning product strategy with revenue growth</li>
+          <li>Led evolution from online payments into a full omnichannel platform spanning online, mobile, and card-present channels</li>
+          <li>Oversaw multi-million dollar payment processing operations at scale</li>
+          <li>Operated at board and executive level, aligning product strategy with commercial growth</li>
           <li>Previously led post-acquisition product integration and launch of Culqi POS as Product Owner</li>
         </ul>
       </div>
@@ -1040,8 +1120,9 @@ footer{
         <div class="exp-role">Founder & Chief Digital / Innovation Officer</div>
         <p class="exp-desc">Founded an innovation and product strategy studio advising enterprise clients across banking, FMCG, retail, and telecoms on digital transformation and product-led growth.</p>
         <ul class="exp-bullets">
+          <li>Led the design, implementation and operational management of 10 agile workstreams during one of Telefónica Movistar Peru's early large-scale digital transformation initiatives</li>
           <li>Led product discovery, user research, and value proposition design for enterprise clients</li>
-          <li>Advised executive teams across multiple industries on digital strategy and innovation</li>
+          <li>Advised executive teams across multiple industries on digital strategy and organizational innovation</li>
         </ul>
       </div>
     </div>
@@ -1067,45 +1148,81 @@ footer{
 <section id="impact">
   <div class="section-label reveal">
     <div class="label-line"></div>
-    <span class="label-text">Selected Work & Impact</span>
+    <span class="label-text">Impact</span>
   </div>
-  <p class="section-title reveal">Turning complexity into execution.</p>
-  <div class="impact-grid reveal">
+  <p class="section-title reveal">Scale, ownership, and leadership.</p>
+  <div class="impact-grid-5 reveal">
     <div class="impact-card">
-      <span class="impact-num">01 ·</span>
-      <h3>International Website Relaunch at Scale</h3>
-      <p>Led the end-to-end strategy and governance of ista's digital presence across 20+ countries — aligning SEO, UX, content, and analytics across a complex multi-market organization.</p>
-      <span class="impact-tag">Digital Transformation</span>
+      <div class="impact-stat">30+</div>
+      <div class="impact-stat-label">International Markets</div>
+      <p>Leading digital initiatives across Europe, LATAM, the Middle East and the United States.</p>
     </div>
     <div class="impact-card">
-      <span class="impact-num">02 ·</span>
-      <h3>AI-Powered Forecasting Product at Global Scale</h3>
-      <p>Owned the roadmap and delivery of a machine-learning forecasting module supporting 350,000+ workers in 33 countries. Evolved it into a core revenue-impacting capability.</p>
-      <span class="impact-tag">Product Leadership · SaaS</span>
+      <div class="impact-stat">Hundreds<br>of Thousands</div>
+      <div class="impact-stat-label">Users Impacted</div>
+      <p>Products and platforms supporting large-scale digital and operational experiences at enterprise scale.</p>
     </div>
     <div class="impact-card">
-      <span class="impact-num">03 ·</span>
-      <h3>FinTech Platform Scaling at CEO Level</h3>
-      <p>Led Culqi's transformation into a full omnichannel B2B payments platform processing USD 200M+ annually, operating at board level within CREDICORP's venture arm.</p>
-      <span class="impact-tag">FinTech · Executive Leadership</span>
+      <div class="impact-stat">Multi-<br>Million</div>
+      <div class="impact-stat-label">Business Responsibility</div>
+      <p>Executive ownership across fintech, digital products, growth and transformation initiatives.</p>
     </div>
     <div class="impact-card">
-      <span class="impact-num">04 ·</span>
-      <h3>Cross-Market Digital Summit Orchestration</h3>
-      <p>Conceived and led ista IGNITE, an international digital summit aligning 21 markets across Europe and the Middle East on a shared 2025 digital strategy and roadmap.</p>
-      <span class="impact-tag">Strategy · Alignment</span>
+      <div class="impact-stat">200+</div>
+      <div class="impact-stat-label">People Leadership</div>
+      <p>Leading product, growth, cross-functional and transformation teams across multiple organizational environments.</p>
     </div>
     <div class="impact-card">
-      <span class="impact-num">05 ·</span>
-      <h3>Brand-to-Digital Integration Model</h3>
-      <p>Led the integration of digital, BTL, and ATL capabilities at Circus GREY, eliminating siloed operating models and creating a unified strategic and creative workflow.</p>
-      <span class="impact-tag">Organizational Transformation</span>
+      <div class="impact-stat">0→1<br>& Scale</div>
+      <div class="impact-stat-label">Product Experience</div>
+      <p>Building, scaling and transforming products across startups, SaaS and multinational environments.</p>
     </div>
-    <div class="impact-card">
-      <span class="impact-num">06 ·</span>
-      <h3>AI-Enabled Workflows & Product Strategy</h3>
-      <p>Actively integrating generative AI into product strategy, digital operations, and team workflows — certified across three leading AI programs and applying these in live international contexts.</p>
-      <span class="impact-tag">AI · Innovation</span>
+  </div>
+</section>
+
+<!-- PERSPECTIVE -->
+<section id="perspective">
+  <div class="section-label reveal">
+    <div class="label-line"></div>
+    <span class="label-text">Beyond the Work</span>
+  </div>
+  <p class="section-title reveal">The work is shaped<br>by the person.</p>
+  <div class="perspective-grid">
+    <div class="perspective-text reveal">
+      <p>Leadership is ultimately a human endeavour. The perspective you bring to it is shaped by where you have lived, how you have communicated, what you have built, and who you have become in the process.</p>
+      <p>Jose is a multicultural leader who has spent his career navigating different cultural expectations, communication styles, and organizational realities — not as a challenge to manage, but as a genuine operational advantage. Growing up between German and Latin American influences, operating internationally in English, and speaking Spanish at home has shaped a leadership style that is naturally adaptive, contextually aware, and oriented toward building shared understanding across difference.</p>
+      <p>Beyond professional life, Jose is a husband and father of three, based in Düsseldorf, Germany. He is deeply interested in the intersection between technology, organizations, communication, and human behavior — and holds a strong conviction that storytelling, empathy, and strategic thinking are far more connected in modern leadership than most frameworks acknowledge.</p>
+      <p>He has also authored creative work, and his wife is a published author — a household where language, ideas, and narrative are taken seriously.</p>
+    </div>
+    <div class="perspective-aside reveal">
+      <div class="perspective-item">
+        <div class="perspective-dot"></div>
+        <span>Based in Düsseldorf, Germany</span>
+      </div>
+      <div class="perspective-item">
+        <div class="perspective-dot"></div>
+        <span>Husband and father of three</span>
+      </div>
+      <div class="perspective-item">
+        <div class="perspective-dot"></div>
+        <span>German-Latin American background</span>
+      </div>
+      <div class="perspective-item">
+        <div class="perspective-dot"></div>
+        <span>Operating in English, German and Spanish</span>
+      </div>
+      <div class="perspective-item">
+        <div class="perspective-dot"></div>
+        <span>Author of creative work</span>
+      </div>
+      <div class="perspective-item">
+        <div class="perspective-dot"></div>
+        <span>Interested in the intersection of technology, organizations, and human behavior</span>
+      </div>
+      <div class="perspective-item">
+        <div class="perspective-dot"></div>
+        <span>Believes storytelling and strategic thinking are deeply connected</span>
+      </div>
     </div>
   </div>
 </section>
