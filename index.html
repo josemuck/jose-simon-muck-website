@@ -561,6 +561,50 @@ section{padding:6rem 3rem}
   border-radius:2px;
 }
 
+/* EXPERIENCE INFLECTION */
+.exp-inflection{
+  padding:2rem 0 2rem 0;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.exp-inflection::before{
+  content:'';
+  position:absolute;left:-4px;top:2.2rem;
+  width:9px;height:9px;
+  border-radius:50%;
+  background:rgba(74,222,128,0.3);
+  border:2px solid var(--navy);
+}
+.exp-inflection-inner{
+  margin-left:200px;
+  padding-left:3rem;
+  border-left:2px solid rgba(74,222,128,0.18);
+  max-width:620px;
+}
+.exp-inflection-text{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  font-style:italic;
+  color:rgba(240,236,228,0.68);
+  line-height:1.82;
+  margin-bottom:1.25rem;
+}
+.exp-inflection-geo{
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  font-family:'DM Mono',monospace;
+  font-size:0.62rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--green);
+  opacity:0.75;
+}
+.inflection-sep{color:rgba(74,222,128,0.4)}
+@media(max-width:900px){
+  .exp-inflection-inner{margin-left:0;padding-left:2rem}
+}
+
 /* IMPACT — KPI cards */
 .impact-grid-5{
   display:grid;
@@ -854,7 +898,7 @@ footer{
       <p>Jose Simon Muck is a strategic operator and transformation leader who connects product, people, and execution across international organizations.</p>
       <p>With 18+ years across startups, fintech, B2B SaaS, creative agencies, and multinational enterprise, his work sits at the intersection of product leadership, digital transformation, and organizational orchestration. From executive leadership within one of Peru's most significant fintech ecosystems, to scaling AI-powered SaaS platforms and directing international digital transformation across 30+ markets — Jose has consistently built, scaled, and transformed digital operations in complex organizational environments.</p>
       <p>Experienced leading across multilingual and multicultural environments in English, German and Spanish. With a German-Latin American background, Jose navigates different cultural expectations, communication styles, and leadership realities as a genuine operational advantage — not a footnote.</p>
-      <p>Currently leading international digital strategy and product ownership at ista, orchestrating cross-market digital execution across Europe and the Middle East.</p>
+      <p>Currently orchestrating cross-market digital execution across Europe and the Middle East.</p>
     </div>
     <div class="about-sidebar reveal">
       <div class="about-kpi">
@@ -1093,6 +1137,18 @@ footer{
           <li>Led cross-functional collaboration across product, data science, engineering, and commercial teams</li>
           <li>Evolved machine-learning–based forecasting from a supporting feature into a core revenue-impacting product capability</li>
         </ul>
+      </div>
+    </div>
+    <div class="exp-inflection reveal">
+      <div class="exp-inflection-inner">
+        <p class="exp-inflection-text">In 2021, the pandemic prompted a rethinking of geography, priorities, and what the next chapter should look like. I relocated my family from Lima to Düsseldorf — a deliberate decision to recommit to the craft of product, deepen technical expertise in SaaS and machine-learning environments, and build roots in Europe. Stepping from CEO to Senior PM was intentional: depth over title, craft over comfort zone.</p>
+        <div class="exp-inflection-geo">
+          <span>Lima, Peru</span>
+          <span class="inflection-sep">——→</span>
+          <span>Düsseldorf, Germany</span>
+          <span class="inflection-sep">·</span>
+          <span>2021</span>
+        </div>
       </div>
     </div>
     <div class="exp-item reveal">
