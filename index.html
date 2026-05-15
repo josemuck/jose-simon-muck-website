@@ -693,6 +693,27 @@ section{padding:6rem 3rem}
   grid-template-columns:repeat(3,1fr);
   gap:1.5rem;
 }
+.featured-perspective{
+  margin-bottom:4rem;
+  border:1px solid var(--border-light);
+  border-radius:2px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:var(--graphite);
+  text-decoration:none;
+  transition:border-color 0.2s;
+}
+.featured-perspective:hover{border-color:rgba(74,222,128,0.3)}
+.featured-perspective-img{background:#1a2340;line-height:0;overflow:hidden}
+.featured-perspective-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%) contrast(1.05)}
+.featured-perspective-body{padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between}
+.featured-eyebrow{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem}
+.featured-eyebrow-line{width:16px;height:1px;background:var(--green);display:inline-block}
+.featured-perspective-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--off-white);line-height:1.2;margin-bottom:1rem}
+.featured-perspective-desc{font-size:0.875rem;color:var(--muted);line-height:1.7;margin-bottom:2rem}
+.featured-perspective-read{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green)}
+@media(max-width:900px){.featured-perspective{grid-template-columns:1fr}.featured-perspective-img{aspect-ratio:16/9}}
 
 /* PERSPECTIVE */
 #perspective{background:var(--graphite)}
@@ -1297,6 +1318,20 @@ footer{
   <p class="section-title reveal">Perspectives on product,<br>transformation, and leadership.</p>
   <p class="insights-subtitle reveal">Perspectives on the realities of product, leadership, and transformation in international organizations.</p>
 
+  <a href="article-product-advice-orgs.html" class="featured-perspective reveal">
+    <div class="featured-perspective-img">
+      <img src="most-product-advice-assumes-functional-organizations.png" alt="Most Product Advice Assumes Functional Organizations" loading="lazy">
+    </div>
+    <div class="featured-perspective-body">
+      <div>
+        <div class="featured-eyebrow"><span class="featured-eyebrow-line"></span>Featured Perspective</div>
+        <h3 class="featured-perspective-title">Most Product Advice Assumes Functional Organizations</h3>
+        <p class="featured-perspective-desc">A large portion of modern product thinking assumes organizations already have alignment, trust, clarity, and healthy incentives. Many companies do not. And when they don't, the standard advice doesn't just fail to help — it can actively make things worse.</p>
+      </div>
+      <div class="featured-perspective-read">Read perspective →</div>
+    </div>
+  </a>
+
   <div class="insights-group reveal">
     <p class="insights-group-label">Strategic Foundations</p>
     <div class="insights-grid">
@@ -1304,25 +1339,25 @@ footer{
         <div class="insight-topic">Product Strategy</div>
         <h3>Product Strategy in Complex Organizations</h3>
         <p>In international organizations, product strategy is rarely only about prioritization. More often, it is about alignment across cultures, teams, and different ways of understanding the same objective.</p>
-        <a href="article-product-strategy.html" class="insight-read">Read essay →</a>
+        <a href="article-product-strategy.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">AI & Work</div>
         <h3>AI and the Future of Workflows</h3>
         <p>Artificial intelligence will not simply automate tasks. It will reshape how organizations communicate, collaborate, and operate across increasingly complex international environments.</p>
-        <a href="article-ai-workflows.html" class="insight-read">Read essay →</a>
+        <a href="article-ai-workflows.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">International Growth</div>
         <h3>International Digital Growth Beyond Localization</h3>
         <p>International digital growth is not simply a translation exercise. It is the challenge of scaling alignment, trust, and execution across cultures, markets, and organizational realities.</p>
-        <a href="article-international-growth.html" class="insight-read">Read essay →</a>
+        <a href="article-international-growth.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">People-Centered Leadership</div>
         <h3>People-Centered Transformation</h3>
         <p>Digital transformation succeeds or fails less because of technology itself and more because of how organizations guide people through complexity, ambiguity, and change.</p>
-        <a href="article-people-transformation.html" class="insight-read">Read essay →</a>
+        <a href="article-people-transformation.html" class="insight-read">Read perspective →</a>
       </div>
     </div>
   </div>
@@ -1334,37 +1369,37 @@ footer{
         <div class="insight-topic">Product Leadership · Organizational Design</div>
         <h3>Most Product Advice Assumes Functional Organizations</h3>
         <p>A large portion of modern product thinking assumes organizations already have alignment, trust, clarity, and healthy incentives. Many companies do not.</p>
-        <a href="article-product-advice-orgs.html" class="insight-read">Read essay →</a>
+        <a href="article-product-advice-orgs.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">Leadership · Product Culture</div>
         <h3>Empowered Teams Are Not a Process</h3>
         <p>Many organizations try to implement empowered teams structurally while preserving the exact conditions that prevent empowerment from existing.</p>
-        <a href="article-empowered-teams.html" class="insight-read">Read essay →</a>
+        <a href="article-empowered-teams.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">Product Management · Leadership</div>
         <h3>The Most Important Product Skill Is Organizational Translation</h3>
         <p>At scale, product management becomes less about backlog prioritization and more about translating between people, incentives, cultures, and organizational realities.</p>
-        <a href="article-organizational-translation.html" class="insight-read">Read essay →</a>
+        <a href="article-organizational-translation.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">Transformation · Product Operations</div>
         <h3>Frameworks Don't Survive Organizational Reality</h3>
         <p>Frameworks are useful until they collide with politics, incentives, legacy systems, acquisitions, market pressure, and organizational complexity.</p>
-        <a href="article-frameworks-reality.html" class="insight-read">Read essay →</a>
+        <a href="article-frameworks-reality.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">Product Leadership · Influence</div>
         <h3>The Product Manager Is Often the Least Powerful Person in the Room</h3>
         <p>Modern product discourse often talks about ownership and empowerment. In practice, many product managers operate with responsibility but very limited actual authority.</p>
-        <a href="article-pm-influence.html" class="insight-read">Read essay →</a>
+        <a href="article-pm-influence.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">International Leadership · Transformation</div>
         <h3>Why International Organizations Cannot Be Managed Like Silicon Valley Startups</h3>
         <p>Many modern management ideas were born in highly concentrated technology environments. International organizations operate under very different realities.</p>
-        <a href="article-international-vs-startups.html" class="insight-read">Read essay →</a>
+        <a href="article-international-vs-startups.html" class="insight-read">Read perspective →</a>
       </div>
     </div>
   </div>
@@ -1376,31 +1411,31 @@ footer{
         <div class="insight-topic">Transformation · Business Reality</div>
         <h3>Transformation Does Not Happen in a Vacuum</h3>
         <p>Most transformation narratives assume organizations have the luxury of focus. In reality, many companies are trying to transform while simultaneously fighting for survival.</p>
-        <a href="article-transformation-vacuum.html" class="insight-read">Read essay →</a>
+        <a href="article-transformation-vacuum.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">Product Development · Execution</div>
         <h3>Ship or Die: Why Product Development Looks Different Inside Real Companies</h3>
         <p>Many organizations are not optimizing for perfect product processes. They are optimizing for survival, speed, market pressure, and business continuity.</p>
-        <a href="article-ship-or-die.html" class="insight-read">Read essay →</a>
+        <a href="article-ship-or-die.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">Transformation · Organizational Behavior</div>
         <h3>When Transformation Starts Feeling Like Friction</h3>
         <p>Transformation fails when organizations introduce complexity faster than teams experience meaningful operational improvement.</p>
-        <a href="article-transformation-friction.html" class="insight-read">Read essay →</a>
+        <a href="article-transformation-friction.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">Business Strategy · Market Reality</div>
         <h3>Transformation Is Not the Goal. Competitiveness Is.</h3>
         <p>Transformation only matters if it strengthens a company's ability to compete, adapt, execute, and survive in increasingly demanding markets.</p>
-        <a href="article-competitiveness-goal.html" class="insight-read">Read essay →</a>
+        <a href="article-competitiveness-goal.html" class="insight-read">Read perspective →</a>
       </div>
       <div class="insight-card">
         <div class="insight-topic">Transformation · Market Pressure</div>
         <h3>The Most Dangerous Transformation Illusion Is Thinking Time Exists</h3>
         <p>Many organizations behave as if transformation can happen gradually and comfortably while markets continue accelerating around them.</p>
-        <a href="article-time-illusion.html" class="insight-read">Read essay →</a>
+        <a href="article-time-illusion.html" class="insight-read">Read perspective →</a>
       </div>
     </div>
   </div>
