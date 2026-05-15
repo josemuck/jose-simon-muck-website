@@ -107,6 +107,10 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   </div>
 </div>
 
+<div class="article-hero">
+  <div class="article-hero-wrap"><img src="most-product-advice-assumes-functional-organizations.png" alt="Most Product Advice Assumes Functional Organizations" loading="lazy"></div>
+</div>
+
 <div class="article-body">
   <p>One of the reasons product advice often feels disconnected from reality is because much of it assumes organizations are already functional.</p>
 
@@ -206,6 +210,40 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <p class="emphasis">But organizational reality always wins. And many companies are far less rational, aligned, and stable than product theory likes to assume.</p>
 </div>
 
+
+<div class="related-section">
+  <div class="related-eyebrow"><span class="related-eyebrow-line"></span>Related Perspectives</div>
+  <p class="related-section-title">Continue reading.</p>
+  <div class="related-grid">
+      <a href="article-empowered-teams.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="empowered-teams-are-not-a-process.png" alt="Empowered Teams Are Not a Process" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Leadership</span>
+          <span class="related-title">Empowered Teams Are Not a Process</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-frameworks-reality.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="frameworks-vs-organizational-reality.png" alt="Frameworks Don't Survive Organizational Reality" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Transformation</span>
+          <span class="related-title">Frameworks Don't Survive Organizational Reality</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-transformation-vacuum.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="transformation-under-pressure.png" alt="Transformation Does Not Happen in a Vacuum" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Transformation</span>
+          <span class="related-title">Transformation Does Not Happen in a Vacuum</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+  </div>
+</div>
 <div class="article-signature">
   <div class="signature-inner">
     <div>
@@ -227,5 +265,15 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <div class="footer-tagline">Strategy · People · Growth · International Execution</div>
   <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
 </footer>
+<script>
+(function(){
+  var bar=document.querySelector('.reading-progress');
+  if(!bar)return;
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
+    if(h>0)bar.style.width=(s/h*100)+'%';
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
