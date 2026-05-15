@@ -125,6 +125,10 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   </div>
 </div>
 
+<div class="article-hero">
+  <div class="article-hero-wrap"><img src="ai-and-the-future-of-workflows.png" alt="AI and the Future of Workflows" loading="lazy"></div>
+</div>
+
 <div class="article-body">
   <p>Much of the public conversation around AI still focuses on replacement:</p>
   <ul class="flow-list">
@@ -211,6 +215,40 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <p class="emphasis">The leaders who can connect both worlds — technology and human complexity — will shape the next generation of digital organizations.</p>
 </div>
 
+
+<div class="related-section">
+  <div class="related-eyebrow"><span class="related-eyebrow-line"></span>Related Perspectives</div>
+  <p class="related-section-title">Continue reading.</p>
+  <div class="related-grid">
+      <a href="article-people-transformation.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="people-centered-transformation.png" alt="People-Centered Transformation" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">People-Centered Leadership</span>
+          <span class="related-title">People-Centered Transformation</span>
+          <span class="related-meta">3 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-transformation-vacuum.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="transformation-under-pressure.png" alt="Transformation Does Not Happen in a Vacuum" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Transformation</span>
+          <span class="related-title">Transformation Does Not Happen in a Vacuum</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-competitiveness-goal.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="competitiveness-over-transformation.png" alt="Transformation Is Not the Goal. Competitiveness Is." loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Business Strategy</span>
+          <span class="related-title">Transformation Is Not the Goal. Competitiveness Is.</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+  </div>
+</div>
 <div class="article-signature">
   <div class="signature-inner">
     <div class="sig-info">
@@ -233,5 +271,15 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
 </footer>
 
+<script>
+(function(){
+  var bar=document.querySelector('.reading-progress');
+  if(!bar)return;
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
+    if(h>0)bar.style.width=(s/h*100)+'%';
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
