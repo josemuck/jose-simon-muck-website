@@ -125,6 +125,10 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   </div>
 </div>
 
+<div class="article-hero">
+  <div class="article-hero-wrap"><img src="international-digital-growth-beyond-localization.png" alt="International Digital Growth Beyond Localization" loading="lazy"></div>
+</div>
+
 <div class="article-body">
   <p>Many international digital initiatives fail because organizations underestimate complexity.</p>
 
@@ -215,6 +219,40 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <p class="emphasis">It is about building organizations capable of scaling alignment across them.</p>
 </div>
 
+
+<div class="related-section">
+  <div class="related-eyebrow"><span class="related-eyebrow-line"></span>Related Perspectives</div>
+  <p class="related-section-title">Continue reading.</p>
+  <div class="related-grid">
+      <a href="article-international-vs-startups.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="international-orgs-vs-startups.png" alt="Why International Organizations Cannot Be Managed Like Silicon Valley Startups" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">International Leadership</span>
+          <span class="related-title">Why International Organizations Cannot Be Managed Like Silicon Valley Startups</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-product-strategy.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="product-strategy-in-complex-organizations.png" alt="Product Strategy in Complex Organizations" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Product Strategy</span>
+          <span class="related-title">Product Strategy in Complex Organizations</span>
+          <span class="related-meta">3 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-transformation-vacuum.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="transformation-under-pressure.png" alt="Transformation Does Not Happen in a Vacuum" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Transformation</span>
+          <span class="related-title">Transformation Does Not Happen in a Vacuum</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+  </div>
+</div>
 <div class="article-signature">
   <div class="signature-inner">
     <div class="sig-info">
@@ -237,5 +275,15 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
 </footer>
 
+<script>
+(function(){
+  var bar=document.querySelector('.reading-progress');
+  if(!bar)return;
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
+    if(h>0)bar.style.width=(s/h*100)+'%';
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
