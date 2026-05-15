@@ -125,6 +125,10 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   </div>
 </div>
 
+<div class="article-hero">
+  <div class="article-hero-wrap"><img src="people-centered-transformation.png" alt="People-Centered Transformation" loading="lazy"></div>
+</div>
+
 <div class="article-body">
   <p>Most transformation initiatives focus heavily on systems, platforms, delivery timelines, and implementation roadmaps.</p>
 
@@ -205,6 +209,40 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <p class="emphasis">But sustainable transformation will still depend on people: their trust, their alignment, their communication, and their ability to move together toward a shared direction.</p>
 </div>
 
+
+<div class="related-section">
+  <div class="related-eyebrow"><span class="related-eyebrow-line"></span>Related Perspectives</div>
+  <p class="related-section-title">Continue reading.</p>
+  <div class="related-grid">
+      <a href="article-ai-workflows.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="ai-and-the-future-of-workflows.png" alt="AI and the Future of Workflows" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">AI & Work</span>
+          <span class="related-title">AI and the Future of Workflows</span>
+          <span class="related-meta">3 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-empowered-teams.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="empowered-teams-are-not-a-process.png" alt="Empowered Teams Are Not a Process" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Leadership</span>
+          <span class="related-title">Empowered Teams Are Not a Process</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-transformation-friction.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="transformation-friction.png" alt="When Transformation Starts Feeling Like Friction" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Transformation</span>
+          <span class="related-title">When Transformation Starts Feeling Like Friction</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+  </div>
+</div>
 <div class="article-signature">
   <div class="signature-inner">
     <div class="sig-info">
@@ -227,5 +265,15 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
 </footer>
 
+<script>
+(function(){
+  var bar=document.querySelector('.reading-progress');
+  if(!bar)return;
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
+    if(h>0)bar.style.width=(s/h*100)+'%';
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
