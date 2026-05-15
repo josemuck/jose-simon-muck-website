@@ -52,14 +52,13 @@ nav{
   border-bottom:1px solid rgba(255,255,255,0.04);
 }
 .nav-logo{
-  font-family:'Playfair Display',serif;
-  font-size:1rem;
-  font-weight:600;
-  letter-spacing:0.12em;
-  color:var(--off-white);
+  display:inline-flex;
+  align-items:center;
   text-decoration:none;
-  text-transform:uppercase;
+  opacity:0.9;
+  transition:opacity 0.2s;
 }
+.nav-logo:hover{opacity:1}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{
   color:var(--muted);
@@ -828,7 +827,12 @@ footer{
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">JSM</a>
+  <a href="#hero" class="nav-logo">
+    <svg width="40" height="26" viewBox="0 0 40 26" fill="none" aria-label="Jose Simon Muck">
+      <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
+    </svg>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
