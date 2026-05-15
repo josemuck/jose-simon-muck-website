@@ -69,9 +69,35 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   .article-body,.article-signature{padding-left:1.5rem;padding-right:1.5rem}
   footer{flex-direction:column;gap:0.5rem;text-align:center}
 }
+
+/* READING PROGRESS */
+.reading-progress{position:fixed;top:0;left:0;width:0;height:2px;background:var(--green);z-index:200;transition:width 0.08s linear}
+
+/* ARTICLE HERO IMAGE */
+.article-hero{max-width:860px;margin:0 auto;padding:0 3rem 2.5rem}
+.article-hero-wrap{border-radius:2px;overflow:hidden;border:1px solid var(--border-light);background:#1a2340;line-height:0}
+.article-hero-wrap img{width:100%;display:block;filter:grayscale(10%) contrast(1.05)}
+
+/* RELATED PERSPECTIVES */
+.related-section{max-width:860px;margin:0 auto;padding:3rem 3rem 5rem;border-top:1px solid var(--border)}
+.related-eyebrow{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem}
+.related-eyebrow-line{width:18px;height:1px;background:var(--green)}
+.related-section-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:500;color:var(--off-white);margin-bottom:2rem}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden}
+.related-card{background:#141c2e;text-decoration:none;display:block;transition:background 0.2s}
+.related-card:hover{background:#1a2340}
+.related-card-img-wrap{aspect-ratio:16/9;background:#1a2340;overflow:hidden;line-height:0}
+.related-card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.05)}
+.related-card-body{padding:1.1rem 1.25rem 1.4rem}
+.related-cat{font-size:0.54rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;display:block}
+.related-title{font-family:'Playfair Display',serif;font-size:0.88rem;color:var(--off-white);line-height:1.35;margin-bottom:0.6rem;display:block}
+.related-meta{font-family:'DM Mono',monospace;font-size:0.57rem;color:var(--muted);letter-spacing:0.06em;display:block}
+.related-read{display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.65rem;font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green)}
+@media(max-width:768px){.article-hero{padding-left:1.5rem;padding-right:1.5rem;padding-bottom:2rem}.related-section{padding-left:1.5rem;padding-right:1.5rem}.related-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div class="reading-progress"></div>
 
 <nav>
   <a href="/" class="nav-logo">JSM</a>
