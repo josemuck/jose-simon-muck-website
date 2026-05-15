@@ -107,6 +107,10 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   </div>
 </div>
 
+<div class="article-hero">
+  <div class="article-hero-wrap"><img src="transformation-friction.png" alt="When Transformation Starts Feeling Like Friction" loading="lazy"></div>
+</div>
+
 <div class="article-body">
   <p>Transformation initiatives often begin with optimism.</p>
 
@@ -198,6 +202,40 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <p class="emphasis">Sustainable transformation requires something much harder than launching change initiatives. It requires making organizations feel measurably better to operate inside.</p>
 </div>
 
+
+<div class="related-section">
+  <div class="related-eyebrow"><span class="related-eyebrow-line"></span>Related Perspectives</div>
+  <p class="related-section-title">Continue reading.</p>
+  <div class="related-grid">
+      <a href="article-transformation-vacuum.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="transformation-under-pressure.png" alt="Transformation Does Not Happen in a Vacuum" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Transformation</span>
+          <span class="related-title">Transformation Does Not Happen in a Vacuum</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-ship-or-die.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="ship-or-die.png" alt="Ship or Die: Why Product Development Looks Different Inside Real Companies" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Product Development</span>
+          <span class="related-title">Ship or Die: Why Product Development Looks Different Inside Real Companies</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-time-illusion.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="time-pressure-and-market-speed.png" alt="The Most Dangerous Transformation Illusion Is Thinking Time Exists" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Transformation</span>
+          <span class="related-title">The Most Dangerous Transformation Illusion Is Thinking Time Exists</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+  </div>
+</div>
 <div class="article-signature">
   <div class="signature-inner">
     <div>
@@ -219,5 +257,15 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <div class="footer-tagline">Strategy · People · Growth · International Execution</div>
   <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
 </footer>
+<script>
+(function(){
+  var bar=document.querySelector('.reading-progress');
+  if(!bar)return;
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
+    if(h>0)bar.style.width=(s/h*100)+'%';
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
