@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selected Perspectives — Jose Simon Muck</title>
+<meta name="description" content="Perspectives on the realities of product, leadership, and transformation in international organizations. By Jose Simon Muck, Product & Digital Transformation Leader.">
+<meta property="og:title" content="Selected Perspectives — Jose Simon Muck">
+<meta property="og:description" content="Perspectives on product, leadership, and transformation in international organizations.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a0f1e;--graphite:#141c2e;--graphite-light:#1a2340;
+  --off-white:#f0ece4;--muted:#8a9ab8;--green:#4ade80;
+  --border:#1e2a44;--border-light:#253048;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--off-white);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,15,30,0.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.04)}
+.nav-logo{display:inline-flex;align-items:center;text-decoration:none;opacity:0.9;transition:opacity 0.2s}
+.nav-logo:hover{opacity:1}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--green)}
+
+/* PAGE HERO */
+.page-hero{padding:9rem 3rem 3.5rem;max-width:1280px;margin:0 auto}
+.page-eyebrow{display:flex;align-items:center;gap:0.75rem;font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.5rem}
+.page-eyebrow-line{width:24px;height:1px;background:var(--green)}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:600;line-height:1.05;color:var(--off-white);margin-bottom:1.25rem}
+.page-subtitle{font-size:1rem;color:var(--muted);max-width:540px;line-height:1.78}
+
+/* AUTHOR STRIP */
+.author-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--graphite);padding:1.1rem 3rem}
+.author-strip-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.author-strip-name{font-family:'Playfair Display',serif;font-size:0.9rem;color:var(--off-white)}
+.author-strip-role{font-size:0.72rem;color:var(--muted);margin-top:0.1rem}
+.author-strip-link{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);text-decoration:none;white-space:nowrap;transition:opacity 0.2s}
+.author-strip-link:hover{opacity:0.7}
+
+/* SECTION WRAPPER */
+.persp-section{max-width:1280px;margin:0 auto;padding:3.5rem 3rem 1rem}
+.persp-section-divider{max-width:1280px;margin:0 auto;padding:0 3rem 2rem;border-bottom:1px solid var(--border)}
+
+/* FEATURED CARD */
+.featured-card{display:grid;grid-template-columns:1fr 1fr;background:var(--graphite);border:1px solid var(--border-light);border-radius:2px;overflow:hidden;text-decoration:none;transition:border-color 0.25s;margin-bottom:3rem}
+.featured-card:hover{border-color:rgba(74,222,128,0.28)}
+.featured-card-img{background:var(--graphite-light);line-height:0;overflow:hidden}
+.featured-card-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(8%) contrast(1.06);transition:transform 0.5s ease}
+.featured-card:hover .featured-card-img img{transform:scale(1.02)}
+.featured-card-body{padding:3rem;display:flex;flex-direction:column;justify-content:space-between}
+.featured-eyebrow{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.55rem}
+.featured-eyebrow-line{width:16px;height:1px;background:var(--green);display:inline-block}
+.featured-card-title{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:600;color:var(--off-white);line-height:1.2;margin-bottom:1.1rem}
+.featured-card-intro{font-size:0.92rem;color:var(--muted);line-height:1.75;margin-bottom:2rem}
+.featured-card-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem}
+.featured-card-read{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green)}
+.featured-card-time{font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--muted);letter-spacing:0.08em}
+
+/* GROUP LABEL */
+.group-label{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
+.group-label::before{content:'';display:block;width:24px;height:1px;background:var(--border-light)}
+
+/* ARTICLE CARD GRIDS */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-bottom:3.5rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-bottom:3.5rem}
+
+/* ARTICLE CARD */
+.p-card{background:var(--graphite);text-decoration:none;display:flex;flex-direction:column;transition:background 0.2s}
+.p-card:hover{background:var(--graphite-light)}
+.p-card-img{aspect-ratio:16/9;background:var(--graphite-light);overflow:hidden;line-height:0}
+.p-card-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(12%) contrast(1.04);transition:transform 0.4s ease}
+.p-card:hover .p-card-img img{transform:scale(1.03)}
+.p-card-body{padding:1.35rem 1.5rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.p-card-cat{font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);margin-bottom:0.55rem;display:block}
+.p-card-title{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--off-white);line-height:1.35;margin-bottom:0.6rem;flex:1}
+.p-card-intro{font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.p-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.p-card-read{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green)}
+.p-card-time{font-family:'DM Mono',monospace;font-size:0.57rem;color:var(--muted);letter-spacing:0.06em}
+
+/* PROFILE CTA */
+.profile-cta{background:var(--graphite);border-top:1px solid var(--border);padding:5rem 3rem}
+.profile-cta-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.profile-cta-label{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem}
+.profile-cta-label-line{width:18px;height:1px;background:var(--green)}
+.profile-cta-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:600;color:var(--off-white);line-height:1.15;margin-bottom:1.25rem}
+.profile-cta-text{font-size:0.92rem;color:var(--muted);line-height:1.8;margin-bottom:2rem}
+.profile-cta-btn{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy);background:var(--green);padding:0.9rem 1.75rem;border-radius:1px;text-decoration:none;transition:opacity 0.2s}
+.profile-cta-btn:hover{opacity:0.85}
+.profile-cta-facts{display:flex;flex-direction:column;gap:0.85rem}
+.profile-cta-fact{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.85rem;color:rgba(240,236,228,0.72);line-height:1.5}
+.profile-cta-dot{width:4px;height:4px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:0.6rem}
+
+/* FOOTER */
+footer{background:var(--graphite);border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between}
+.footer-name{font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--muted);letter-spacing:0.08em}
+.footer-tagline{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(138,154,184,0.5)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .profile-cta-inner{gap:3rem}
+}
+@media(max-width:900px){
+  .featured-card{grid-template-columns:1fr}
+  .featured-card-img{aspect-ratio:16/9}
+  .profile-cta-inner{grid-template-columns:1fr}
+  .profile-cta-facts{display:none}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .page-hero{padding:7rem 1.5rem 2.5rem}
+  .author-strip{padding:1rem 1.5rem}
+  .persp-section{padding:2.5rem 1.5rem 0.5rem}
+  .persp-section-divider{padding:0 1.5rem 1.5rem}
+  .grid-4,.grid-3{grid-template-columns:1fr}
+  .featured-card-body{padding:2rem 1.5rem}
+  .featured-card-title{font-size:1.2rem}
+  .profile-cta{padding:3rem 1.5rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="40" height="26" viewBox="0 0 40 26" fill="none" aria-label="Jose Simon Muck">
+      <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#footprint">Footprint</a></li>
+    <li><a href="index.html#impact">Impact</a></li>
+    <li><a href="index.html#perspective">Beyond the Work</a></li>
+    <li><a href="perspectives.html" class="active">Perspectives</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-eyebrow"><span class="page-eyebrow-line"></span>Jose Simon Muck</div>
+  <h1 class="page-title">Selected<br>Perspectives</h1>
+  <p class="page-subtitle">On the realities of product leadership, digital transformation, and building organizations that actually work — in international markets.</p>
+</div>
+
+<!-- AUTHOR STRIP -->
+<div class="author-strip">
+  <div class="author-strip-inner">
+    <div>
+      <div class="author-strip-name">Jose Simon Muck</div>
+      <div class="author-strip-role">Product & Digital Transformation Leader &middot; Düsseldorf, Germany</div>
+    </div>
+    <a href="index.html#about" class="author-strip-link">View full profile →</a>
+  </div>
+</div>
+
+<!-- FEATURED PERSPECTIVE -->
+<div class="persp-section" style="padding-bottom:0">
+  <a href="article-product-advice-orgs.html" class="featured-card">
+    <div class="featured-card-img">
+      <img src="assets/images/articles/most-product-advice-assumes-functional-organizations.png" alt="Editorial illustration for Most Product Advice Assumes Functional Organizations" loading="eager">
+    </div>
+    <div class="featured-card-body">
+      <div>
+        <div class="featured-eyebrow"><span class="featured-eyebrow-line"></span>Featured Perspective</div>
+        <h2 class="featured-card-title">Most Product Advice Assumes Functional Organizations</h2>
+        <p class="featured-card-intro">A large portion of modern product thinking assumes organizations already have alignment, trust, clarity, and healthy incentives. Many companies do not. And when they don't, the standard advice doesn't just fail to help — it can actively make things worse.</p>
+      </div>
+      <div class="featured-card-meta">
+        <span class="featured-card-read">Read perspective →</span>
+        <span class="featured-card-time">5 min read</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- ── STRATEGIC FOUNDATIONS ──────────────────────────────────────── -->
+<div class="persp-section">
+  <div class="group-label">Strategic Foundations</div>
+  <div class="grid-4">
+
+    <a href="article-product-strategy.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/product-strategy-in-complex-organizations.png" alt="Editorial illustration for Product Strategy in Complex Organizations" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Product Strategy</span>
+        <span class="p-card-title">Product Strategy in Complex Organizations</span>
+        <p class="p-card-intro">In international organizations, product strategy is rarely only about prioritization. More often, it is about alignment across cultures, teams, and different ways of understanding the same objective.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">3 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-ai-workflows.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/ai-and-the-future-of-workflows.png" alt="Editorial illustration for AI and the Future of Workflows" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">AI & Work</span>
+        <span class="p-card-title">AI and the Future of Workflows</span>
+        <p class="p-card-intro">Artificial intelligence will not simply automate tasks. It will reshape how organizations communicate, collaborate, and operate across increasingly complex international environments.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">3 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-international-growth.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/international-digital-growth-beyond-localization.png" alt="Editorial illustration for International Digital Growth Beyond Localization" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">International Growth</span>
+        <span class="p-card-title">International Digital Growth Beyond Localization</span>
+        <p class="p-card-intro">International digital growth is not simply a translation exercise. It is the challenge of scaling alignment, trust, and execution across cultures, markets, and organizational realities.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">3 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-people-transformation.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/people-centered-transformation.png" alt="Editorial illustration for People-Centered Transformation" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">People-Centered Leadership</span>
+        <span class="p-card-title">People-Centered Transformation</span>
+        <p class="p-card-intro">Digital transformation succeeds or fails less because of technology itself and more because of how organizations guide people through complexity, ambiguity, and change.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">3 min read</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── ORGANIZATIONAL REALITY ─────────────────────────────────────── -->
+<div class="persp-section">
+  <div class="group-label">Organizational Reality</div>
+  <div class="grid-3">
+
+    <a href="article-empowered-teams.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/empowered-teams-are-not-a-process.png" alt="Editorial illustration for Empowered Teams Are Not a Process" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Leadership</span>
+        <span class="p-card-title">Empowered Teams Are Not a Process</span>
+        <p class="p-card-intro">Many organizations try to implement empowered teams structurally while preserving the exact conditions that prevent empowerment from existing.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-organizational-translation.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/organizational-translation.png" alt="Editorial illustration for The Most Important Product Skill Is Organizational Translation" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Product Management</span>
+        <span class="p-card-title">The Most Important Product Skill Is Organizational Translation</span>
+        <p class="p-card-intro">At scale, product management becomes less about backlog prioritization and more about translating between people, incentives, cultures, and organizational realities.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-frameworks-reality.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/frameworks-vs-organizational-reality.png" alt="Editorial illustration for Frameworks Don't Survive Organizational Reality" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Transformation</span>
+        <span class="p-card-title">Frameworks Don't Survive Organizational Reality</span>
+        <p class="p-card-intro">Frameworks are useful until they collide with politics, incentives, legacy systems, acquisitions, market pressure, and organizational complexity.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-pm-influence.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/responsibility-without-authority.png" alt="Editorial illustration for The Product Manager Is Often the Least Powerful Person in the Room" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Product Leadership</span>
+        <span class="p-card-title">The Product Manager Is Often the Least Powerful Person in the Room</span>
+        <p class="p-card-intro">Modern product discourse often talks about ownership and empowerment. In practice, many product managers operate with responsibility but very limited actual authority.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-international-vs-startups.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/international-orgs-vs-startups.png" alt="Editorial illustration for Why International Organizations Cannot Be Managed Like Silicon Valley Startups" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">International Leadership</span>
+        <span class="p-card-title">Why International Organizations Cannot Be Managed Like Silicon Valley Startups</span>
+        <p class="p-card-intro">Many modern management ideas were born in highly concentrated technology environments. International organizations operate under very different realities.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-product-advice-orgs.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/most-product-advice-assumes-functional-organizations.png" alt="Editorial illustration for Most Product Advice Assumes Functional Organizations" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Product Leadership</span>
+        <span class="p-card-title">Most Product Advice Assumes Functional Organizations</span>
+        <p class="p-card-intro">A large portion of modern product thinking assumes organizations already have alignment, trust, clarity, and healthy incentives. Many companies do not.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">5 min read</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── TRANSFORMATION UNDER PRESSURE ─────────────────────────────── -->
+<div class="persp-section" style="padding-bottom:4rem">
+  <div class="group-label">Transformation Under Pressure</div>
+  <div class="grid-3">
+
+    <a href="article-transformation-vacuum.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/transformation-under-pressure.png" alt="Editorial illustration for Transformation Does Not Happen in a Vacuum" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Transformation</span>
+        <span class="p-card-title">Transformation Does Not Happen in a Vacuum</span>
+        <p class="p-card-intro">Most transformation narratives assume organizations have the luxury of focus. In reality, many companies are trying to transform while simultaneously fighting for relevance, revenue, speed, and survival.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-ship-or-die.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/ship-or-die.png" alt="Editorial illustration for Ship or Die" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Product Development</span>
+        <span class="p-card-title">Ship or Die: Why Product Development Looks Different Inside Real Companies</span>
+        <p class="p-card-intro">Many organizations are not optimizing for perfect product processes. They are optimizing for survival, speed, market pressure, and business continuity.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-transformation-friction.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/transformation-friction.png" alt="Editorial illustration for When Transformation Starts Feeling Like Friction" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Transformation</span>
+        <span class="p-card-title">When Transformation Starts Feeling Like Friction</span>
+        <p class="p-card-intro">Transformation fails when organizations introduce complexity faster than teams experience meaningful operational improvement.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-competitiveness-goal.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/competitiveness-over-transformation.png" alt="Editorial illustration for Transformation Is Not the Goal. Competitiveness Is." loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Business Strategy</span>
+        <span class="p-card-title">Transformation Is Not the Goal. Competitiveness Is.</span>
+        <p class="p-card-intro">Transformation only matters if it strengthens a company's ability to compete, adapt, execute, and survive in increasingly demanding markets.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-time-illusion.html" class="p-card">
+      <div class="p-card-img"><img src="assets/images/articles/time-pressure-and-market-speed.png" alt="Editorial illustration for The Most Dangerous Transformation Illusion Is Thinking Time Exists" loading="lazy"></div>
+      <div class="p-card-body">
+        <span class="p-card-cat">Transformation</span>
+        <span class="p-card-title">The Most Dangerous Transformation Illusion Is Thinking Time Exists</span>
+        <p class="p-card-intro">Many organizations behave as if transformation can happen gradually and comfortably while markets continue accelerating around them.</p>
+        <div class="p-card-footer">
+          <span class="p-card-read">Read perspective →</span>
+          <span class="p-card-time">4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Empty cell for visual balance in 3-col grid with 5 items -->
+    <div class="p-card" style="background:transparent;border:none;pointer-events:none" aria-hidden="true"></div>
+
+  </div>
+</div>
+
+<!-- PROFILE CTA -->
+<div class="profile-cta">
+  <div class="profile-cta-inner">
+    <div>
+      <div class="profile-cta-label"><span class="profile-cta-label-line"></span>The author</div>
+      <h2 class="profile-cta-title">The perspective behind<br>these ideas</h2>
+      <p class="profile-cta-text">Jose Simon Muck is a Product & Digital Transformation Leader with 18+ years of experience operating across 30+ international markets. He has led digital transformation programs, scaled product organizations, and built teams across Europe, Latin America, and the Middle East — always with a focus on what actually works inside complex, real-world organizations.</p>
+      <a href="index.html#about" class="profile-cta-btn">View full profile →</a>
+    </div>
+    <div class="profile-cta-facts">
+      <div class="profile-cta-fact"><div class="profile-cta-dot"></div><span>Currently orchestrating cross-market digital execution across Europe and the Middle East</span></div>
+      <div class="profile-cta-fact"><div class="profile-cta-dot"></div><span>18+ years leading product and transformation across 30+ markets</span></div>
+      <div class="profile-cta-fact"><div class="profile-cta-dot"></div><span>Former CEO in Peru, now Senior Product Leader in Germany</span></div>
+      <div class="profile-cta-fact"><div class="profile-cta-dot"></div><span>Operating in English, German, and Spanish</span></div>
+      <div class="profile-cta-fact"><div class="profile-cta-dot"></div><span>Based in Düsseldorf, Germany</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <svg width="40" height="26" viewBox="0 0 40 26" fill="none" style="display:block;margin-bottom:6px">
+      <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
+    </svg>
+    <div class="footer-name">Jose Simon Muck</div>
+  </div>
+  <div class="footer-tagline">Strategy &middot; People &middot; Growth &middot; International Execution</div>
+  <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">&copy; 2026</div>
+</footer>
+
+</body>
+</html>
