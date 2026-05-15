@@ -94,6 +94,13 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
 .related-meta{font-family:'DM Mono',monospace;font-size:0.57rem;color:var(--muted);letter-spacing:0.06em;display:block}
 .related-read{display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.65rem;font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green)}
 @media(max-width:768px){.article-hero{padding-left:1.5rem;padding-right:1.5rem;padding-bottom:2rem}.related-section{padding-left:1.5rem;padding-right:1.5rem}.related-grid{grid-template-columns:1fr}}
+.article-nav{max-width:860px;margin:0 auto;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;border-top:1px solid var(--border)}
+.article-nav-link{text-decoration:none;display:flex;flex-direction:column;gap:0.3rem;max-width:46%}
+.article-nav-link:hover .article-nav-title{color:var(--green)}
+.article-nav-dir{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}
+.article-nav-title{font-family:'Playfair Display',serif;font-size:0.88rem;color:var(--off-white);line-height:1.35;transition:color 0.2s}
+.article-nav-next{text-align:right;align-items:flex-end}
+@media(max-width:768px){.article-nav{padding:1.5rem;flex-direction:column;gap:1.5rem}.article-nav-link{max-width:100%}.article-nav-next{align-items:flex-start;text-align:left}}
 </style>
 </head>
 <body>
@@ -112,7 +119,7 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
 </nav>
 
 <div class="article-header">
-  <a href="/#insights" class="back-link"><span class="back-arrow">←</span> Selected Perspectives</a>
+  <a href="/#insights" class="back-link">← Back to Selected Perspectives</a>
   <div class="article-category"><span class="cat-line"></span>AI · Digital Transformation · Future of Work</div>
   <h1 class="article-title">AI and the Future of Workflows</h1>
   <p class="article-lead">Artificial intelligence will not simply automate tasks. It will reshape how organizations communicate, collaborate, and operate across increasingly complex international environments.</p>
@@ -126,7 +133,7 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
 </div>
 
 <div class="article-hero">
-  <div class="article-hero-wrap"><img src="ai-and-the-future-of-workflows.png" alt="AI and the Future of Workflows" loading="lazy"></div>
+  <div class="article-hero-wrap"><img src="assets/images/articles/ai-and-the-future-of-workflows.png" alt="AI and the Future of Workflows" loading="lazy"></div>
 </div>
 
 <div class="article-body">
@@ -216,39 +223,9 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
 </div>
 
 
-<div class="related-section">
-  <div class="related-eyebrow"><span class="related-eyebrow-line"></span>Related Perspectives</div>
-  <p class="related-section-title">Continue reading.</p>
-  <div class="related-grid">
-      <a href="article-people-transformation.html" class="related-card">
-        <div class="related-card-img-wrap"><img src="people-centered-transformation.png" alt="People-Centered Transformation" loading="lazy"></div>
-        <div class="related-card-body">
-          <span class="related-cat">People-Centered Leadership</span>
-          <span class="related-title">People-Centered Transformation</span>
-          <span class="related-meta">3 min read</span>
-          <div class="related-read">Read perspective →</div>
-        </div>
-      </a>
-      <a href="article-transformation-vacuum.html" class="related-card">
-        <div class="related-card-img-wrap"><img src="transformation-under-pressure.png" alt="Transformation Does Not Happen in a Vacuum" loading="lazy"></div>
-        <div class="related-card-body">
-          <span class="related-cat">Transformation</span>
-          <span class="related-title">Transformation Does Not Happen in a Vacuum</span>
-          <span class="related-meta">4 min read</span>
-          <div class="related-read">Read perspective →</div>
-        </div>
-      </a>
-      <a href="article-competitiveness-goal.html" class="related-card">
-        <div class="related-card-img-wrap"><img src="competitiveness-over-transformation.png" alt="Transformation Is Not the Goal. Competitiveness Is." loading="lazy"></div>
-        <div class="related-card-body">
-          <span class="related-cat">Business Strategy</span>
-          <span class="related-title">Transformation Is Not the Goal. Competitiveness Is.</span>
-          <span class="related-meta">4 min read</span>
-          <div class="related-read">Read perspective →</div>
-        </div>
-      </a>
-  </div>
-</div>
+<div id="article-nav-container"></div>
+<div id="related-perspectives-container"></div>
+
 <div class="article-signature">
   <div class="signature-inner">
     <div class="sig-info">
@@ -281,5 +258,7 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   },{passive:true});
 })();
 </script>
+<script src="assets/js/perspectives-data.js"></script>
+<script src="assets/js/article-nav.js"></script>
 </body>
 </html>
