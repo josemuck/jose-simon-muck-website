@@ -107,6 +107,10 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   </div>
 </div>
 
+<div class="article-hero">
+  <div class="article-hero-wrap"><img src="empowered-teams-are-not-a-process.png" alt="Empowered Teams Are Not a Process" loading="lazy"></div>
+</div>
+
 <div class="article-body">
   <p>"Empowered teams" has become one of the most repeated concepts in modern product leadership.</p>
 
@@ -195,6 +199,40 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <p class="emphasis">That requires much more than agile frameworks. It requires leadership capable of connecting people, direction, incentives, and trust at scale.</p>
 </div>
 
+
+<div class="related-section">
+  <div class="related-eyebrow"><span class="related-eyebrow-line"></span>Related Perspectives</div>
+  <p class="related-section-title">Continue reading.</p>
+  <div class="related-grid">
+      <a href="article-product-advice-orgs.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="most-product-advice-assumes-functional-organizations.png" alt="Most Product Advice Assumes Functional Organizations" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Product Leadership</span>
+          <span class="related-title">Most Product Advice Assumes Functional Organizations</span>
+          <span class="related-meta">5 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-organizational-translation.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="organizational-translation.png" alt="The Most Important Product Skill Is Organizational Translation" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">Product Management</span>
+          <span class="related-title">The Most Important Product Skill Is Organizational Translation</span>
+          <span class="related-meta">4 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+      <a href="article-people-transformation.html" class="related-card">
+        <div class="related-card-img-wrap"><img src="people-centered-transformation.png" alt="People-Centered Transformation" loading="lazy"></div>
+        <div class="related-card-body">
+          <span class="related-cat">People-Centered Leadership</span>
+          <span class="related-title">People-Centered Transformation</span>
+          <span class="related-meta">3 min read</span>
+          <div class="related-read">Read perspective →</div>
+        </div>
+      </a>
+  </div>
+</div>
 <div class="article-signature">
   <div class="signature-inner">
     <div>
@@ -216,5 +254,15 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
   <div class="footer-tagline">Strategy · People · Growth · International Execution</div>
   <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
 </footer>
+<script>
+(function(){
+  var bar=document.querySelector('.reading-progress');
+  if(!bar)return;
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
+    if(h>0)bar.style.width=(s/h*100)+'%';
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
