@@ -1558,6 +1558,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   var list = navLinks.cloneNode(true);
   list.removeAttribute('id');
+  list.className = 'mobile-nav-list';
   overlay.appendChild(list);
   document.body.appendChild(overlay);
 
