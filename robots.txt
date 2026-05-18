@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /index.html
+
+# Article pages and editorial hub are welcome
+Allow: /article-
+Allow: /perspectives.html
+Allow: /assets/
+
+Sitemap: https://josemuck.com/sitemap.xml
