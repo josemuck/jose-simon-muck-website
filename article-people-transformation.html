@@ -102,6 +102,21 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
 .article-nav-title{font-family:'Playfair Display',serif;font-size:0.88rem;color:var(--off-white);line-height:1.35;transition:color 0.2s}
 .article-nav-next{text-align:right;align-items:flex-end}
 @media(max-width:768px){.article-nav{padding:1.5rem;flex-direction:column;gap:1.5rem}.article-nav-link{max-width:100%}.article-nav-next{align-items:flex-start;text-align:left}}
+
+/* ── Hamburger / Mobile nav ─────────────────────────────────────── */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;position:relative;z-index:200}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--off-white);border-radius:2px;transition:transform 0.3s ease,opacity 0.3s ease}
+.nav-hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-hamburger{display:flex}
+  .nav-links{display:none;position:fixed;inset:0;background:var(--navy);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:150;padding:2rem}
+  .nav-links.is-open{display:flex}
+  .nav-links a{font-size:1.1rem;letter-spacing:0.06em;color:var(--off-white)}
+  .nav-links li{text-align:center}
+}
 </style>
 </head>
 <body>
@@ -109,7 +124,7 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
 
 <nav>
   <a href="/" class="nav-logo">JSM</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="/#about">About</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#footprint">Footprint</a></li>
@@ -117,6 +132,10 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
     <li><a href="perspectives.html">Insights</a></li>
     <li><a href="/#contact">Contact</a></li>
   </ul>
+
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <div class="article-header">
