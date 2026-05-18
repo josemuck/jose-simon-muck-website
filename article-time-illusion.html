@@ -232,5 +232,25 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
 </script>
 <script src="assets/js/perspectives-data.js"></script>
 <script src="assets/js/article-nav.js"></script>
+<script>
+(function(){
+  var btn  = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('nav-links');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('is-open', !open);
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body>
 </html>
