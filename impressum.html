@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://josemuck.com/impressum.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum | José Simon Muck</title>
+<meta name="description" content="Impressum und Anbieterkennung gemäß § 5 DDG für josemuck.com — José Simon Muck.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a0f1e;
+  --graphite:#141c2e;
+  --graphite-light:#1a2340;
+  --off-white:#f0ece4;
+  --muted:#8a9ab8;
+  --green:#4ade80;
+  --border:#1e2a44;
+  --border-light:#253048;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--off-white);font-size:16px;line-height:1.7}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,15,30,0.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.04)}
+.nav-logo{display:inline-flex;align-items:center;text-decoration:none;opacity:0.9;transition:opacity 0.2s}
+.nav-logo:hover{opacity:1}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.75rem;font-weight:500;
+  letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--off-white)}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;cursor:pointer;padding:6px;position:relative;z-index:200}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--off-white);
+  border-radius:2px;transition:transform 0.3s ease,opacity 0.3s ease}
+.nav-hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-hamburger{display:flex}
+  .nav-links{display:none!important}
+}
+#mobile-nav-overlay{display:none;position:fixed;inset:0;background:#0a0f1e;z-index:9999;
+  flex-direction:column;align-items:center;justify-content:center}
+#mobile-nav-overlay.is-open{display:flex}
+#mobile-nav-overlay ul{list-style:none;display:flex;flex-direction:column;align-items:center;gap:2rem;padding:0;margin:0}
+#mobile-nav-overlay li a{color:#f0ece4;text-decoration:none;font-size:1.2rem;letter-spacing:0.06em;
+  font-family:'DM Sans',sans-serif;font-weight:400;transition:color 0.2s}
+#mobile-nav-overlay li a:hover{color:#4ade80}
+#mobile-nav-overlay .mobile-nav-close{position:absolute;top:1.4rem;right:1.6rem;
+  background:none;border:none;cursor:pointer;color:#8892a4;font-size:1.6rem;line-height:1;padding:0.25rem 0.5rem}
+
+/* LEGAL LAYOUT */
+.legal-wrap{padding-top:80px;max-width:760px;margin:0 auto;padding-left:2rem;padding-right:2rem}
+.legal-hero{padding:4rem 0 2.5rem}
+.legal-eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--green);display:block;margin-bottom:1rem}
+.legal-title{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:500;
+  color:var(--off-white);line-height:1.15;margin-bottom:1rem}
+.legal-subtitle{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--muted);
+  line-height:1.6;max-width:560px}
+.legal-divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+.legal-section{margin-bottom:2.5rem}
+.legal-section-label{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--green);margin-bottom:0.6rem;display:block}
+.legal-section-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:500;
+  color:var(--off-white);margin-bottom:0.85rem;line-height:1.3}
+.legal-section p,.legal-section address{font-size:0.88rem;color:var(--muted);
+  line-height:1.8;margin-bottom:0.75rem;font-style:normal}
+.legal-section p:last-child{margin-bottom:0}
+.legal-section a{color:var(--green);text-decoration:none}
+.legal-section a:hover{text-decoration:underline}
+.legal-section ul{font-size:0.88rem;color:var(--muted);line-height:1.8;
+  padding-left:1.25rem;margin-bottom:0.75rem}
+.legal-section ul li{margin-bottom:0.25rem}
+.legal-notice{background:var(--graphite);border:1px solid var(--border);border-radius:2px;
+  padding:1rem 1.25rem;font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:2rem}
+.legal-notice strong{color:var(--off-white)}
+.lang-de{border-left:2px solid var(--border-light);padding-left:1rem;margin-bottom:1.25rem}
+.lang-en{border-left:2px solid rgba(74,222,128,0.2);padding-left:1rem}
+.lang-label{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.15em;
+  text-transform:uppercase;color:rgba(138,154,184,0.5);margin-bottom:0.4rem;display:block}
+
+/* FOOTER */
+footer{background:var(--graphite);border-top:1px solid var(--border);padding:2rem 3rem}
+.footer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.footer-name{font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--muted);letter-spacing:0.08em}
+.footer-tagline{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(138,154,184,0.5)}
+.footer-legal{border-top:1px solid var(--border);padding-top:1rem;display:flex;
+  align-items:center;gap:0.75rem;justify-content:center;flex-wrap:wrap}
+.footer-legal-link{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:rgba(138,154,184,0.5);text-decoration:none;transition:color 0.2s}
+.footer-legal-link:hover{color:var(--green)}
+.footer-legal-sep{color:rgba(138,154,184,0.25);font-size:0.6rem}
+.footer-legal-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;
+  font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(138,154,184,0.5);padding:0;transition:color 0.2s}
+.footer-legal-btn:hover{color:var(--green)}
+@media(max-width:768px){
+  .legal-title{font-size:1.9rem}
+  .legal-wrap{padding-left:1.25rem;padding-right:1.25rem}
+  .footer-top{flex-direction:column;gap:1rem;text-align:center}
+  footer{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="40" height="26" viewBox="0 0 40 26" fill="none" aria-label="Jose Simon Muck">
+      <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
+    </svg>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#footprint">Footprint</a></li>
+    <li><a href="index.html#impact">Impact</a></li>
+    <li><a href="index.html#perspective">Beyond the Work</a></li>
+    <li><a href="perspectives.html">Perspectives</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="legal-wrap" id="main">
+  <div class="legal-hero">
+    <span class="legal-eyebrow">Legal</span>
+    <h1 class="legal-title">Impressum</h1>
+    <p class="legal-subtitle">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
+  </div>
+
+  <hr class="legal-divider">
+
+  <div class="legal-section">
+    <span class="legal-section-label">Anbieter</span>
+    <h2 class="legal-section-title">Angaben zum Diensteanbieter</h2>
+    <address>
+      <strong style="color:var(--off-white)">José Simon Muck</strong><br>
+      Lindemannstraße 61<br>
+      40237 Düsseldorf<br>
+      Deutschland
+    </address>
+    <p>E-Mail: <a href="mailto:jose@josemuck.com">jose@josemuck.com</a></p>
+    <p style="font-size:0.78rem;color:rgba(138,154,184,0.5);margin-top:0.5rem">
+      Keine Telefonnummer veröffentlicht. Bitte nehmen Sie Kontakt per E-Mail auf.
+    </p>
+  </div>
+
+  <hr class="legal-divider">
+
+  <div class="legal-section">
+    <span class="legal-section-label">Unternehmensform</span>
+    <h2 class="legal-section-title">Art des Anbieters</h2>
+    <p>
+      Diese Website wird von José Simon Muck als Privatperson betrieben.
+      Es besteht keine Eintragung im Handelsregister, keine Gewerbeanmeldung,
+      kein Umsatzsteuer-Identifikationsnummer und keine berufsrechtliche Zulassung.
+      Die Website dient als persönliches Profil und redaktionelle Plattform.
+    </p>
+  </div>
+
+  <hr class="legal-divider">
+
+  <div class="legal-section">
+    <span class="legal-section-label">Redaktion</span>
+    <h2 class="legal-section-title">Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h2>
+    <address>
+      José Simon Muck<br>
+      Lindemannstraße 61<br>
+      40237 Düsseldorf<br>
+      Deutschland
+    </address>
+  </div>
+
+  <hr class="legal-divider">
+
+  <div class="legal-section">
+    <span class="legal-section-label">Haftung</span>
+    <h2 class="legal-section-title">Haftung für Inhalte</h2>
+    <p>
+      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den
+      allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht
+      verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen
+      zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+    </p>
+    <p>
+      Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen
+      Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der
+      Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden
+      Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-section-title">Haftung für Links</h2>
+    <p>
+      Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
+      Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+      verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+    </p>
+    <p>
+      Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft.
+      Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche
+      Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht
+      zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+    </p>
+  </div>
+
+  <hr class="legal-divider">
+
+  <div class="legal-section">
+    <span class="legal-section-label">Urheberrecht</span>
+    <h2 class="legal-section-title">Copyright</h2>
+    <p>
+      Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
+      Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
+      Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+    </p>
+    <p>
+      Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+      Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte
+      Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem
+      auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis.
+      Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+    </p>
+    <p>© 2026 José Simon Muck. Alle Rechte vorbehalten.</p>
+  </div>
+
+  <hr class="legal-divider">
+  <p style="font-size:0.72rem;color:rgba(138,154,184,0.4);padding-bottom:3rem">
+    Zuletzt aktualisiert: Mai 2026
+  </p>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <svg width="40" height="26" viewBox="0 0 40 26" fill="none" style="display:block;margin-bottom:6px">
+        <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="footer-name">Jose Simon Muck</div>
+    </div>
+    <div class="footer-tagline">Strategy · People · Growth · International Execution</div>
+    <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
+  </div>
+  <nav class="footer-legal" aria-label="Legal">
+    <a href="impressum.html" class="footer-legal-link">Impressum</a>
+    <span class="footer-legal-sep" aria-hidden="true">·</span>
+    <a href="privacy.html" class="footer-legal-link">Datenschutz</a>
+    <span class="footer-legal-sep" aria-hidden="true">·</span>
+    <button class="footer-legal-btn" onclick="window.consentManager&&window.consentManager.openSettings()">Cookie-Einstellungen</button>
+  </nav>
+</footer>
+
+<script src="assets/js/consent.js"></script>
+<script>
+(function(){
+  var btn      = document.querySelector('.nav-hamburger');
+  var navLinks = document.getElementById('nav-links');
+  if (!btn || !navLinks) return;
+  var overlay = document.createElement('div');
+  overlay.id  = 'mobile-nav-overlay';
+  var closeBtn = document.createElement('button');
+  closeBtn.className   = 'mobile-nav-close';
+  closeBtn.textContent = '✕';
+  closeBtn.setAttribute('aria-label', 'Close menu');
+  overlay.appendChild(closeBtn);
+  var list = navLinks.cloneNode(true);
+  list.removeAttribute('id');
+  list.className = 'mobile-nav-list';
+  overlay.appendChild(list);
+  document.body.appendChild(overlay);
+  function open(){btn.setAttribute('aria-expanded','true');overlay.classList.add('is-open');document.body.style.overflow='hidden';}
+  function close(){btn.setAttribute('aria-expanded','false');overlay.classList.remove('is-open');document.body.style.overflow='';}
+  btn.addEventListener('click',function(){overlay.classList.contains('is-open')?close():open();});
+  closeBtn.addEventListener('click',close);
+  overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
+</body>
+</html>

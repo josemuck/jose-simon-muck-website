@@ -60,9 +60,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:
 .sig-role{font-size:0.78rem;color:var(--muted);margin-top:0.2rem}
 .sig-link{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);text-decoration:none;transition:opacity 0.2s;white-space:nowrap}
 .sig-link:hover{opacity:0.7}
-footer{background:var(--graphite);border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between}
+footer{background:var(--graphite);border-top:1px solid var(--border);padding:2rem 3rem}
+.footer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
 .footer-name{font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--muted);letter-spacing:0.08em}
 .footer-tagline{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(138,154,184,0.5)}
+.footer-legal{border-top:1px solid var(--border);padding-top:1rem;display:flex;align-items:center;gap:0.75rem;justify-content:center;flex-wrap:wrap}
+.footer-legal-link{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(138,154,184,0.5);text-decoration:none;transition:color 0.2s}
+.footer-legal-link:hover{color:var(--green)}
+.footer-legal-sep{color:rgba(138,154,184,0.25);font-size:0.6rem}
+.footer-legal-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(138,154,184,0.5);padding:0;transition:color 0.2s}
+.footer-legal-btn:hover{color:var(--green)}
+@media(max-width:768px){.footer-top{flex-direction:column;gap:1rem;text-align:center}}
 @media(max-width:768px){
   nav{padding:1rem 1.5rem}
   .nav-links{display:none}
@@ -281,17 +289,27 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
 </div>
 
 <footer>
-  <div>
-    <svg width="40" height="26" viewBox="0 0 40 26" fill="none" style="display:block;margin-bottom:6px">
-      <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-      <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
-    </svg>
-    <div class="footer-name">Jose Simon Muck</div>
+  <div class="footer-top">
+    <div>
+      <svg width="40" height="26" viewBox="0 0 40 26" fill="none" style="display:block;margin-bottom:6px">
+        <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="footer-name">Jose Simon Muck</div>
+    </div>
+    <div class="footer-tagline">Strategy · People · Growth · International Execution</div>
+    <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
   </div>
-  <div class="footer-tagline">Strategy · People · Growth · International Execution</div>
-  <div style="font-size:0.65rem;color:rgba(138,154,184,0.4);letter-spacing:0.05em">© 2026</div>
+  <nav class="footer-legal" aria-label="Legal">
+    <a href="impressum.html" class="footer-legal-link">Impressum</a>
+    <span class="footer-legal-sep" aria-hidden="true">·</span>
+    <a href="privacy.html" class="footer-legal-link">Datenschutz</a>
+    <span class="footer-legal-sep" aria-hidden="true">·</span>
+    <button class="footer-legal-btn" onclick="window.consentManager&&window.consentManager.openSettings()">Cookie-Einstellungen</button>
+  </nav>
 </footer>
 
+<script src="assets/js/consent.js"></script>
 <script>
 (function(){
   var bar=document.querySelector('.reading-progress');

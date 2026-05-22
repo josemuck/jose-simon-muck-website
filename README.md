@@ -81,3 +81,62 @@ Typography: **Playfair Display** (display/editorial) · **Inter** (body) · **DM
 ## License
 
 All written content and editorial illustrations are © Jose Simon Muck. All rights reserved.
+
+---
+
+## Legal & Compliance
+
+> ⚠️ **Legal disclaimer:** This implementation provides a technical scaffold for GDPR/TDDDG compliance. Final review by a qualified Rechtsanwalt or Datenschutzbeauftragter is strongly recommended.
+
+### Pages
+
+| Page | URL | Purpose |
+|---|---|---|
+| `impressum.html` | `/impressum.html` | German Impressum (§ 5 DDG) |
+| `privacy.html` | `/privacy.html` | Datenschutzerklärung / Privacy Policy (GDPR/DSGVO) |
+
+### Consent System (`assets/js/consent.js`)
+
+A lightweight vanilla JS consent manager. No external dependencies.
+
+**Consent categories:**
+
+| Category | Key | Default | Purpose |
+|---|---|---|---|
+| Essential | `essential` | `true` (always) | Consent preference storage |
+| Analytics | `analytics` | `false` | Vercel Web Analytics |
+
+**localStorage key:** `jsm_consent` (version `1.0`)
+
+**Consent object structure:**
+```json
+{
+  "version": "1.0",
+  "timestamp": "2026-05-15T12:00:00.000Z",
+  "essential": true,
+  "analytics": false
+}
+```
+
+**Analytics gating:** Vercel Web Analytics (`/_vercel/insights/script.js`) is only injected into the DOM after the user grants analytics consent. No tracking loads before consent.
+
+**Re-opening settings:** Users can reopen the consent panel at any time via the "Cookie-Einstellungen" button in the footer.
+
+### How to update when adding new services
+
+| Service to add | Action required |
+|---|---|
+| **Google Analytics** | Add GA script inside `if (analyticsConsent)` block in `consent.js`. Update privacy.html §07. Bump `VERSION` in consent.js. |
+| **YouTube embeds** | Gate embed loading behind analytics consent. Update privacy.html §07. |
+| **LinkedIn embeds** | Add LinkedIn as a third-party processor in privacy.html. Gate behind consent if tracking is involved. |
+| **Newsletter / contact form** | Add new consent category if email marketing involved. Update privacy.html with new data processor details. |
+| **Sandra AI / Chatbot** | Add chatbot as a data processor in privacy.html. Implement consent gate if the chatbot processes personal data. |
+
+**When changing consent purposes materially:** Bump `VERSION` in `consent.js` (e.g., `"1.0"` → `"1.1"`). This invalidates stored consents and shows the banner again to returning visitors.
+
+### Footer legal links
+
+All pages include footer links to:
+- `impressum.html` — Impressum
+- `privacy.html` — Datenschutz
+- Cookie-Einstellungen button (opens consent panel via `window.consentManager.openSettings()`)
