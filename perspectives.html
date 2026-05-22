@@ -84,8 +84,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:
 .p-card-cat{font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);margin-bottom:0.55rem;display:block}
 .p-card-title{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--off-white);line-height:1.35;margin-bottom:0.6rem;flex:1}
 .p-card-intro{font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
-.p-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
-.p-card-read{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green)}
+.p-card-.p-card-read{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green)}
 .p-card-time{font-family:'DM Mono',monospace;font-size:0.57rem;color:var(--muted);letter-spacing:0.06em}
 
 /* PROFILE CTA */
@@ -492,7 +491,7 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
     </a>
     <div class="footer-tagline">Strategy · People · Growth · International Execution</div>
   </div>
-  <nav class="footer-legal" aria-label="Legal">
+  <div class="footer-legal" role="navigation" aria-label="Legal">
     <a href="impressum.html" class="footer-legal-link">Impressum</a>
     <span class="footer-legal-sep" aria-hidden="true">·</span>
     <a href="privacy.html" class="footer-legal-link">Datenschutz</a>
@@ -500,7 +499,7 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
     <button class="footer-legal-btn" onclick="window.consentManager&&window.consentManager.openSettings()">Cookie-Einstellungen</button>
     <span class="footer-legal-sep" aria-hidden="true">·</span>
     <span class="footer-legal-copy">© 2026</span>
-  </nav>
+  </div>
 </footer>
 
 <script src="assets/js/consent.js"></script>
