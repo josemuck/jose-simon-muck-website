@@ -3,195 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logo Concepts · Jose Simon Muck</title>
+  <title>JM Monogram Concepts · Jose Simon Muck</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root{
-      --navy:#0a0f1e;
-      --navy-mid:#0f1628;
-      --graphite:#141c2e;
-      --graphite-light:#1a2340;
-      --off-white:#e8e6e1;
-      --muted:rgba(232,230,225,0.5);
-      --dim:rgba(232,230,225,0.22);
-      --green:#4ade80;
-      --green-faint:rgba(74,222,128,0.45);
-      --green-ghost:rgba(74,222,128,0.08);
-      --border:rgba(232,230,225,0.08);
+      --navy:#0a0f1e;--navy-mid:#0f1628;--graphite:#141c2e;
+      --graphite-light:#1a2340;--off-white:#e8e6e1;
+      --muted:rgba(232,230,225,0.5);--dim:rgba(232,230,225,0.22);
+      --green:#4ade80;--border:rgba(232,230,225,0.08);
     }
-
     *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--navy);color:var(--off-white);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6}
 
-    body{
-      background:var(--navy);
-      color:var(--off-white);
-      font-family:'DM Sans',sans-serif;
-      font-weight:300;
-      line-height:1.6;
-    }
-
-    /* ── Header ──────────────────────────────────────── */
-    .hd{
-      padding:4.5rem 4rem 3.5rem;
-      border-bottom:1px solid var(--border);
-      max-width:1100px;margin:0 auto;
-    }
-
-    .eyebrow{
-      display:flex;align-items:center;gap:.75rem;
-      font-family:'DM Mono',monospace;font-size:.6rem;
-      letter-spacing:.2em;color:var(--green);text-transform:uppercase;
-      margin-bottom:1.25rem;
-    }
+    .hd{padding:4.5rem 4rem 3.5rem;border-bottom:1px solid var(--border);max-width:1100px;margin:0 auto}
+    .eyebrow{display:flex;align-items:center;gap:.75rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--green);text-transform:uppercase;margin-bottom:1.25rem}
     .ey-line{width:28px;height:1px;background:var(--green);opacity:.5}
-
-    .hd h1{
-      font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:500;
-      line-height:1.2;margin-bottom:.85rem;
-    }
-
+    .hd h1{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:500;line-height:1.2;margin-bottom:.85rem}
     .hd p{color:var(--muted);font-size:.87rem;line-height:1.8;max-width:540px}
 
-    /* ── Wrap ────────────────────────────────────────── */
     .wrap{max-width:1100px;margin:0 auto;padding:0 4rem 7rem}
 
-    /* ── Reference strip ─────────────────────────────── */
-    .ref{
-      padding:2.5rem 0;
-      border-bottom:1px solid var(--border);
-      display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;
-    }
-
-    .chip{
-      background:var(--graphite);border:1px solid var(--border);border-radius:2px;
-      padding:1.5rem 2rem;
-      display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
-    }
-
-    .mono{
-      font-family:'DM Mono',monospace;font-size:.58rem;
-      letter-spacing:.2em;color:var(--dim);text-transform:uppercase;margin-bottom:.5rem;
-    }
-
+    /* reference */
+    .ref{padding:2.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap}
+    .chip{background:var(--graphite);border:1px solid var(--border);border-radius:2px;padding:1.5rem 2rem;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+    .mono{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:var(--dim);text-transform:uppercase;margin-bottom:.5rem}
     .ref-note{color:var(--muted);font-size:.78rem;line-height:1.7;max-width:400px}
     .ref-name{font-size:.83rem;font-weight:500;margin-bottom:.3rem}
 
-    /* ── Concept section ─────────────────────────────── */
+    /* concept sections */
     .concept{padding:4.5rem 0;border-bottom:1px solid var(--border)}
+    .concept-hd{display:flex;align-items:baseline;gap:1.25rem;margin-bottom:3rem}
+    .cn{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:400;line-height:1;color:rgba(74,222,128,0.09);min-width:56px}
+    .concept-name{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:500;margin-bottom:.3rem}
+    .concept-sub{font-family:'DM Mono',monospace;font-size:.59rem;letter-spacing:.16em;color:var(--green);text-transform:uppercase}
+    .concept-body{display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:start}
 
-    .concept-hd{
-      display:flex;align-items:baseline;gap:1.25rem;margin-bottom:3rem;
-    }
+    /* logo display */
+    .ld{background:var(--graphite);border:1px solid var(--border);border-radius:2px;padding:3.5rem 4rem;display:flex;align-items:center;justify-content:center;min-width:220px}
 
-    .cn{
-      font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:400;
-      line-height:1;color:rgba(74,222,128,0.09);min-width:56px;
-    }
-
-    .concept-name{
-      font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:500;
-      margin-bottom:.3rem;
-    }
-
-    .concept-sub{
-      font-family:'DM Mono',monospace;font-size:.59rem;letter-spacing:.16em;
-      color:var(--green);text-transform:uppercase;
-    }
-
-    .concept-body{
-      display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:start;
-    }
-
-    /* ── Logo display ────────────────────────────────── */
-    .ld{
-      background:var(--graphite);border:1px solid var(--border);border-radius:2px;
-      padding:3.5rem 4rem;
-      display:flex;align-items:center;justify-content:center;
-      min-width:220px;
-    }
-
-    /* ── Right column ────────────────────────────────── */
+    /* contexts */
     .ctx-row{display:flex;gap:1.25rem;margin-bottom:2.5rem;flex-wrap:wrap}
-
-    .ctx{
-      background:var(--navy-mid);border:1px solid var(--border);border-radius:2px;
-      padding:1rem 1.25rem;flex:1;min-width:160px;
-    }
-
-    .ctx-lbl{
-      font-family:'DM Mono',monospace;font-size:.53rem;letter-spacing:.18em;
-      color:var(--dim);text-transform:uppercase;margin-bottom:.7rem;
-    }
-
-    /* Nav mockup */
-    .nav-mock{
-      background:rgba(10,15,30,0.96);border-bottom:1px solid var(--border);
-      padding:0 .75rem;height:44px;
-      display:flex;align-items:center;justify-content:space-between;border-radius:1px;
-    }
-
+    .ctx{background:var(--navy-mid);border:1px solid var(--border);border-radius:2px;padding:1rem 1.25rem;flex:1;min-width:160px}
+    .ctx-lbl{font-family:'DM Mono',monospace;font-size:.53rem;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;margin-bottom:.7rem}
+    .nav-mock{background:rgba(10,15,30,0.96);border-bottom:1px solid var(--border);padding:0 .75rem;height:44px;display:flex;align-items:center;justify-content:space-between;border-radius:1px}
     .m-links{display:flex;gap:.7rem;align-items:center}
     .m-dot{height:1px;background:rgba(232,230,225,0.14);border-radius:1px}
-    .m-dot:nth-child(1){width:22px}
-    .m-dot:nth-child(2){width:30px}
-    .m-dot:nth-child(3){width:16px}
-
-    /* Footer mockup */
+    .m-dot:nth-child(1){width:22px}.m-dot:nth-child(2){width:30px}.m-dot:nth-child(3){width:16px}
     .ft-mock{display:flex;flex-direction:column;gap:.2rem}
-    .ft-name{
-      font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.1em;
-      color:rgba(232,230,225,0.4);
-    }
+    .ft-name{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.1em;color:rgba(232,230,225,0.4)}
 
-    /* ── Rationale ───────────────────────────────────── */
+    /* rationale */
     .rat{border-top:1px solid var(--border);padding-top:1.5rem}
+    .rat p{color:var(--muted);font-size:.82rem;line-height:1.82;max-width:440px;margin-bottom:1rem}
+    .rat-row{display:flex;gap:1.5rem;margin-top:.5rem;flex-wrap:wrap}
+    .rat-col{}
+    .rat-col-label{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.16em;color:var(--dim);text-transform:uppercase;margin-bottom:.4rem}
+    .tags{display:flex;gap:.4rem;flex-wrap:wrap}
+    .tag{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.1em;color:var(--green);border:1px solid rgba(74,222,128,0.2);padding:.2rem .55rem;border-radius:1px;text-transform:uppercase}
+    .tag-dim{color:var(--dim);border-color:rgba(232,230,225,0.1)}
 
-    .rat p{
-      color:var(--muted);font-size:.82rem;line-height:1.82;
-      max-width:440px;margin-bottom:1.1rem;
-    }
+    /* comparison */
+    .cmp{padding:3.5rem 0 3rem}
+    .cmp-row{display:flex;align-items:flex-end;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:2.5rem}
+    .cmp-item{display:flex;flex-direction:column;align-items:center;gap:.6rem;flex:1;min-width:80px;padding:.5rem}
+    .cmp-cap{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.13em;color:var(--dim);text-transform:uppercase;text-align:center}
+    .cmp-div{width:1px;height:64px;background:var(--border);align-self:center;flex:0 0 1px}
 
-    .rat p:last-of-type{margin-bottom:.85rem}
-
-    .uses{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.65rem}
-
-    .tag{
-      font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.12em;
-      color:var(--green);border:1px solid rgba(74,222,128,0.2);
-      padding:.2rem .55rem;border-radius:1px;text-transform:uppercase;
-    }
-
-    /* ── Comparison ──────────────────────────────────── */
-    .cmp{
-      padding:3.5rem 0 3rem;
-    }
-
-    .cmp-row{
-      display:flex;gap:0;align-items:flex-end;flex-wrap:wrap;
-      border-top:1px solid var(--border);
-      padding-top:2.5rem;
-    }
-
-    .cmp-item{
-      display:flex;flex-direction:column;align-items:center;gap:.6rem;
-      flex:1;min-width:90px;padding:.5rem;
-    }
-
-    .cmp-cap{
-      font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.14em;
-      color:var(--dim);text-transform:uppercase;text-align:center;
-    }
-
-    .cmp-div{
-      width:1px;height:64px;background:var(--border);align-self:center;flex:0;
-    }
-
-    /* ── CTA ─────────────────────────────────────────── */
-    .cta{
-      background:var(--graphite);border-top:1px solid var(--border);
-      padding:2.5rem 4rem;text-align:center;
-    }
+    /* cta */
+    .cta{background:var(--graphite);border-top:1px solid var(--border);padding:2.5rem 4rem;text-align:center}
     .cta p{color:var(--muted);font-size:.82rem;line-height:1.8}
     .cta strong{color:var(--off-white)}
 
@@ -204,18 +84,15 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════
-     PAGE HEADER
-════════════════════════════════════════════════════ -->
 <header class="hd">
-  <div class="eyebrow"><span class="ey-line"></span>Logo Direction — Round 2</div>
-  <h1>Five Concepts for the M Mark</h1>
-  <p>Not calligraphy. Not signature. Each direction approaches the same problem differently: a personal mark that communicates <em>"José Muck stands behind this."</em> Five distinct philosophies — same palette, no changes to the site until you choose.</p>
+  <div class="eyebrow"><span class="ey-line"></span>JM Monogram — Round 3</div>
+  <h1>Five Concepts for a Personal Mark</h1>
+  <p>Each direction treats the JM differently — as a loop, an inscription, a formal pair, a hierarchy, a seal. Same palette throughout. No changes to the site until you choose.</p>
 </header>
 
 <div class="wrap">
 
-  <!-- Reference -->
+  <!-- current mark reference -->
   <div class="ref">
     <div class="chip">
       <svg width="68" height="44" viewBox="0 0 40 26" fill="none">
@@ -225,494 +102,602 @@
     </div>
     <div>
       <div class="mono">Current mark — reference</div>
-      <div class="ref-name">Abstract Chart / Mountain</div>
-      <p class="ref-note">Product-oriented. Geometric. Reads as startup or index fund. The five concepts below replace this with an M-based personal mark — each one a different answer to what "personal seal of quality" means.</p>
+      <div class="ref-name">Abstract chart mark</div>
+      <p class="ref-note">Reads as product / fintech. The five concepts below replace it with a JM monogram — a mark that says <em>person</em>, not <em>company</em>.</p>
     </div>
   </div>
 
 
-  <!-- ═══════════════════════════════════════════════
-       CONCEPT 1 — THE CONSTRUCTED MARK
-       A precision-built M with slab terminals.
-       The typographer's personal seal.
-  ════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+       CONCEPT 1 — THE LOOPED LIGATURE
+       J's hook rises back up to become M's left stem.
+       Creates an enclosed teardrop counter on the left.
+  ═══════════════════════════════════════════════ -->
   <div class="concept">
     <div class="concept-hd">
       <div class="cn">1</div>
       <div>
-        <div class="concept-name">The Constructed Mark</div>
-        <div class="concept-sub">Precision · Slab terminals · Optical weight</div>
+        <div class="concept-name">The Looped Ligature</div>
+        <div class="concept-sub">Enclosed · Fluid · Fountain-pen quality</div>
       </div>
     </div>
     <div class="concept-body">
-
       <div class="ld">
         <!--
-          M built to a system: outer stems heavier than inner V.
-          Horizontal slab caps at each stem end = constructed, not typed.
-          Inner V lighter weight with miter join = structural hierarchy.
-          Valley at 62% — the classic proportion of a refined uppercase M.
+          Path 1: The J descends from (8,4) to (8,28),
+          hooks right via Q(8,36)(18,28), then rises
+          back to (18,4) — forming a closed teardrop counter.
+          That rising stroke IS the M's left stem.
+          Path 2: M inner V + right stem from (18,4).
         -->
-        <svg width="120" height="108" viewBox="0 0 40 36" fill="none">
-          <!-- Slab caps: top of stems -->
-          <line x1="2"  y1="4"  x2="6"  y2="4"  stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <line x1="34" y1="4"  x2="38" y2="4"  stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <!-- Outer vertical stems -->
-          <line x1="4"  y1="4"  x2="4"  y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <line x1="36" y1="4"  x2="36" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <!-- Slab caps: bottom of stems -->
-          <line x1="2"  y1="33" x2="6"  y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <line x1="34" y1="33" x2="38" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <!-- Inner V: lighter optical weight, miter join for precision -->
-          <polyline points="4,4 20,21 36,4"
-            stroke="#4ade80" stroke-width="1.1" fill="none"
-            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+        <svg width="130" height="90" viewBox="0 0 52 36" fill="none">
+          <path d="M8,4 L8,28 Q8,36 18,28 L18,4"
+            stroke="#4ade80" stroke-width="1.5" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18,4 L33,21 L48,4 L48,32"
+            stroke="#4ade80" stroke-width="1.5" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-
       <div>
         <div class="ctx-row">
           <div class="ctx">
             <div class="ctx-lbl">Navigation</div>
             <div class="nav-mock">
-              <svg width="40" height="36" viewBox="0 0 40 36" fill="none">
-                <line x1="2"  y1="4"  x2="6"  y2="4"  stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="34" y1="4"  x2="38" y2="4"  stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="4"  y1="4"  x2="4"  y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="36" y1="4"  x2="36" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="2"  y1="33" x2="6"  y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="34" y1="33" x2="38" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <polyline points="4,4 20,21 36,4" stroke="#4ade80" stroke-width="1.1" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+              <svg width="46" height="32" viewBox="0 0 52 36" fill="none">
+                <path d="M8,4 L8,28 Q8,36 18,28 L18,4" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18,4 L33,21 L48,4 L48,32" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <div class="m-links">
-                <div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div>
-              </div>
+              <div class="m-links"><div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div></div>
             </div>
           </div>
           <div class="ctx">
             <div class="ctx-lbl">Footer</div>
             <div class="ft-mock">
-              <svg width="36" height="32" viewBox="0 0 40 36" fill="none">
-                <line x1="2"  y1="4"  x2="6"  y2="4"  stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="34" y1="4"  x2="38" y2="4"  stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="4"  y1="4"  x2="4"  y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="36" y1="4"  x2="36" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="2"  y1="33" x2="6"  y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <line x1="34" y1="33" x2="38" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-                <polyline points="4,4 20,21 36,4" stroke="#4ade80" stroke-width="1.1" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+              <svg width="40" height="28" viewBox="0 0 52 36" fill="none">
+                <path d="M8,4 L8,28 Q8,36 18,28 L18,4" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18,4 L33,21 L48,4 L48,32" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <div class="ft-name">Jose Simon Muck</div>
             </div>
           </div>
         </div>
         <div class="rat">
-          <div class="mono">Rationale</div>
-          <p>An M built to a system. The outer stems carry more optical weight than the inner diagonals — a deliberate choice borrowed from premium type design, where strokes have a structural hierarchy rather than uniform weight. The horizontal slab caps at each stem end signal intentional construction: this letter was drawn, not typed. The valley is raised to 62% of the total height, the classical proportion of a refined uppercase M.</p>
-          <p>Symbolism: the mark communicates precision, durability, and craft. The same qualities you find on the title page of a book published by someone who cares about every detail. Works at any size without losing its character.</p>
-          <div class="uses">
-            <span class="tag">Book cover</span>
-            <span class="tag">Presentation header</span>
-            <span class="tag">Letterhead</span>
-            <span class="tag">Favicon</span>
+          <div class="mono">Rationale &amp; Symbolism</div>
+          <p>The J's descender hooks right and rises back to become the M's left stem — a single gesture that forms both letters. The enclosed counter (the teardrop loop on the left) is the visual fingerprint of the mark. In penmanship and luxury type, enclosed loops signal confidence and refinement. The J and M share a stroke rather than merely sitting beside each other: they are genuinely one mark, not two letters.</p>
+          <div class="rat-row">
+            <div class="rat-col">
+              <div class="rat-col-label">Strengths</div>
+              <div class="tags">
+                <span class="tag">Unique</span>
+                <span class="tag">Fluid</span>
+                <span class="tag">Elegant at scale</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Weaknesses</div>
+              <div class="tags">
+                <span class="tag tag-dim">Loop detail lost &lt;20px</span>
+                <span class="tag tag-dim">J less obvious</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Works best</div>
+              <div class="tags">
+                <span class="tag">Website nav</span>
+                <span class="tag">Profile mark</span>
+                <span class="tag">Large format</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
 
-  <!-- ═══════════════════════════════════════════════
-       CONCEPT 2 — THE JM MONOGRAM
-       J and M fused into one mark. Both initials.
-  ════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+       CONCEPT 2 — THE INSCRIPTION
+       J's vertical is inscribed through the center of M —
+       running above and below. Letters genuinely interlock.
+  ═══════════════════════════════════════════════ -->
   <div class="concept">
     <div class="concept-hd">
       <div class="cn">2</div>
       <div>
-        <div class="concept-name">The JM Monogram</div>
-        <div class="concept-sub">Initials fused · Hidden depth · Classic monogram</div>
+        <div class="concept-name">The Inscription</div>
+        <div class="concept-sub">Interlocking · Overlapping · Monogram tradition</div>
       </div>
     </div>
     <div class="concept-body">
-
       <div class="ld">
         <!--
-          J and M share a vertical stroke.
-          The M's left stem is also the J's descender.
-          At the bottom, the J's hook exits gracefully to the right.
-          Primary read: M. Secondary read: JM. The mark rewards closer attention.
+          M: outer stems (heavy) + inner V (light).
+          J: vertical at x=23, the M's axis of symmetry,
+          extending above M's stem tops (y=2) and below
+          its baseline (y=34). J hook exits right at y=34.
+          The J's axis passes precisely through the M's valley.
         -->
-        <svg width="110" height="116" viewBox="0 0 40 42" fill="none">
-          <!-- J/left-M stem with J hook at bottom -->
-          <path d="M5,4 L5,32 Q5,39 14,39"
-            stroke="#4ade80" stroke-width="1.5" fill="none"
-            stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- M: inner V and right stem (shares left stem top at 5,4) -->
-          <path d="M5,4 L20,21 L35,4 L35,32"
-            stroke="#4ade80" stroke-width="1.5" fill="none"
-            stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="115" height="105" viewBox="0 0 46 42" fill="none">
+          <!-- M outer stems -->
+          <line x1="5"  y1="5" x2="5"  y2="30" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+          <line x1="41" y1="5" x2="41" y2="30" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+          <!-- M inner V — lighter weight -->
+          <polyline points="5,5 23,21 41,5"
+            stroke="#4ade80" stroke-width="0.9" fill="none"
+            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+          <!-- J vertical through M's center — same weight as stems -->
+          <line x1="23" y1="2" x2="23" y2="34" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+          <!-- J hook exits right below M baseline -->
+          <path d="M23,34 Q23,41 33,41"
+            stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round"/>
         </svg>
       </div>
-
       <div>
         <div class="ctx-row">
           <div class="ctx">
             <div class="ctx-lbl">Navigation</div>
             <div class="nav-mock">
-              <svg width="38" height="40" viewBox="0 0 40 42" fill="none">
-                <path d="M5,4 L5,32 Q5,39 14,39" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M5,4 L20,21 L35,4 L35,32" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="40" height="38" viewBox="0 0 46 42" fill="none">
+                <line x1="5" y1="5" x2="5" y2="30" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+                <line x1="41" y1="5" x2="41" y2="30" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+                <polyline points="5,5 23,21 41,5" stroke="#4ade80" stroke-width="0.9" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+                <line x1="23" y1="2" x2="23" y2="34" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+                <path d="M23,34 Q23,41 33,41" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round"/>
               </svg>
-              <div class="m-links">
-                <div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div>
-              </div>
+              <div class="m-links"><div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div></div>
             </div>
           </div>
           <div class="ctx">
             <div class="ctx-lbl">Footer</div>
             <div class="ft-mock">
-              <svg width="34" height="37" viewBox="0 0 40 42" fill="none">
-                <path d="M5,4 L5,32 Q5,39 14,39" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M5,4 L20,21 L35,4 L35,32" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="36" height="33" viewBox="0 0 46 42" fill="none">
+                <line x1="5" y1="5" x2="5" y2="30" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+                <line x1="41" y1="5" x2="41" y2="30" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+                <polyline points="5,5 23,21 41,5" stroke="#4ade80" stroke-width="0.9" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+                <line x1="23" y1="2" x2="23" y2="34" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+                <path d="M23,34 Q23,41 33,41" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round"/>
               </svg>
               <div class="ft-name">Jose Simon Muck</div>
             </div>
           </div>
         </div>
         <div class="rat">
-          <div class="mono">Rationale</div>
-          <p>The J's descender and the M's left stem are the same line. Both initials occupy a single, unified mark. At a glance it reads as M — a clear, confident letterform. On second look, the J hook at the base reveals the full monogram. This is how luxury houses have built initials-based marks for over a century: two identities compressed into one shape.</p>
-          <p>Symbolism: hidden depth communicates that there is more to the person than what is immediately apparent. The mark is also fundamentally personal — it contains the specific initials of one individual. No other person could own this mark in the same way.</p>
-          <div class="uses">
-            <span class="tag">Monogram</span>
-            <span class="tag">Personal stationery</span>
-            <span class="tag">Profile mark</span>
-            <span class="tag">Article byline</span>
+          <div class="mono">Rationale &amp; Symbolism</div>
+          <p>The J's vertical is inscribed through the M's axis of symmetry — passing through the valley, extending above both stem tops and below the baseline. This is how engravers build classic overlapping monograms: one letter passes through the other, neither dominant alone. The J's hook exits quietly below the M's baseline, like a signature written underneath a document heading. The crown of the J above the M adds the final note of authority.</p>
+          <div class="rat-row">
+            <div class="rat-col">
+              <div class="rat-col-label">Strengths</div>
+              <div class="tags">
+                <span class="tag">Formal</span>
+                <span class="tag">Engraved quality</span>
+                <span class="tag">Both initials clear</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Weaknesses</div>
+              <div class="tags">
+                <span class="tag tag-dim">Dense at small sizes</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Works best</div>
+              <div class="tags">
+                <span class="tag">Book cover</span>
+                <span class="tag">Presentations</span>
+                <span class="tag">Embossed / print</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
 
-  <!-- ═══════════════════════════════════════════════
-       CONCEPT 3 — THE EDITORIAL IMPRINT
-       M between precision rules. The author's stamp.
-  ════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+       CONCEPT 3 — THE EXECUTIVE PAIR
+       J and M side by side, slab-capped, optical weight.
+       A typographer's formal monogram.
+  ═══════════════════════════════════════════════ -->
   <div class="concept">
     <div class="concept-hd">
       <div class="cn">3</div>
       <div>
-        <div class="concept-name">The Editorial Imprint</div>
-        <div class="concept-sub">Ruled · Contained · Publisher's mark</div>
+        <div class="concept-name">The Executive Pair</div>
+        <div class="concept-sub">Formal · Slab terminals · Optically balanced</div>
       </div>
     </div>
     <div class="concept-body">
-
       <div class="ld">
         <!--
-          The M sits between two precision horizontal rules.
-          Tick marks above and below at each stem position reinforce the
-          sense of a structured system — like a measurement or drafting mark.
-          The whole assembly reads as a publisher's colophon or chapter stamp.
+          J: x=10, y=4–28, top slab (8,4)–(12,4),
+          hook Q(10,34)(18,34).
+          M: left stem x=24, right stem x=50, valley (37,21).
+          Slab caps on all stem ends.
+          Optical weight: stems 1.8px, inner V 1.1px.
+          A hairline baseline rule ties the two letters.
         -->
-        <svg width="152" height="76" viewBox="0 0 56 28" fill="none">
-          <!-- Top rule -->
-          <line x1="2"  y1="4"  x2="54" y2="4"  stroke="rgba(74,222,128,0.38)" stroke-width="0.75"/>
-          <!-- Bottom rule -->
-          <line x1="2"  y1="24" x2="54" y2="24" stroke="rgba(74,222,128,0.38)" stroke-width="0.75"/>
-          <!-- Tick marks at stem positions (above top rule) -->
-          <line x1="17" y1="2"  x2="17" y2="6"  stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-          <line x1="39" y1="2"  x2="39" y2="6"  stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-          <!-- Tick marks (below bottom rule) -->
-          <line x1="17" y1="22" x2="17" y2="26" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-          <line x1="39" y1="22" x2="39" y2="26" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-          <!-- M: centered between rules with breathing room -->
-          <polyline points="17,21 17,7 28,16 39,7 39,21"
-            stroke="#4ade80" stroke-width="1.6" fill="none"
-            stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="145" height="90" viewBox="0 0 56 36" fill="none">
+          <!-- J top slab cap -->
+          <line x1="8" y1="4" x2="13" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <!-- J vertical stem -->
+          <line x1="10" y1="4" x2="10" y2="28" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <!-- J hook -->
+          <path d="M10,28 Q10,34 18,34" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+          <!-- M left stem + slab caps -->
+          <line x1="22" y1="4" x2="26" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="24" y1="4" x2="24" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="22" y1="32" x2="26" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+
+          <!-- M right stem + slab caps -->
+          <line x1="48" y1="4" x2="52" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="50" y1="4" x2="50" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="48" y1="32" x2="52" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+
+          <!-- M inner V — lighter optical weight -->
+          <polyline points="24,4 37,21 50,4"
+            stroke="#4ade80" stroke-width="1.1" fill="none"
+            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+
+          <!-- Hairline baseline rule connecting J and M -->
+          <line x1="4" y1="34" x2="53" y2="34" stroke="rgba(74,222,128,0.2)" stroke-width="0.5"/>
         </svg>
       </div>
-
       <div>
         <div class="ctx-row">
           <div class="ctx">
             <div class="ctx-lbl">Navigation</div>
             <div class="nav-mock">
-              <svg width="56" height="28" viewBox="0 0 56 28" fill="none">
-                <line x1="2"  y1="4"  x2="54" y2="4"  stroke="rgba(74,222,128,0.38)" stroke-width="0.75"/>
-                <line x1="2"  y1="24" x2="54" y2="24" stroke="rgba(74,222,128,0.38)" stroke-width="0.75"/>
-                <line x1="17" y1="2"  x2="17" y2="6"  stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-                <line x1="39" y1="2"  x2="39" y2="6"  stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-                <line x1="17" y1="22" x2="17" y2="26" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-                <line x1="39" y1="22" x2="39" y2="26" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-                <polyline points="17,21 17,7 28,16 39,7 39,21" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="50" height="32" viewBox="0 0 56 36" fill="none">
+                <line x1="8" y1="4" x2="13" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="10" y1="4" x2="10" y2="28" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <path d="M10,28 Q10,34 18,34" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                <line x1="22" y1="4" x2="26" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="24" y1="4" x2="24" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="22" y1="32" x2="26" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="48" y1="4" x2="52" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="50" y1="4" x2="50" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="48" y1="32" x2="52" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <polyline points="24,4 37,21 50,4" stroke="#4ade80" stroke-width="1.1" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+                <line x1="4" y1="34" x2="53" y2="34" stroke="rgba(74,222,128,0.2)" stroke-width="0.5"/>
               </svg>
-              <div class="m-links">
-                <div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div>
-              </div>
+              <div class="m-links"><div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div></div>
             </div>
           </div>
           <div class="ctx">
             <div class="ctx-lbl">Footer</div>
             <div class="ft-mock">
-              <svg width="52" height="26" viewBox="0 0 56 28" fill="none">
-                <line x1="2"  y1="4"  x2="54" y2="4"  stroke="rgba(74,222,128,0.38)" stroke-width="0.75"/>
-                <line x1="2"  y1="24" x2="54" y2="24" stroke="rgba(74,222,128,0.38)" stroke-width="0.75"/>
-                <line x1="17" y1="2"  x2="17" y2="6"  stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-                <line x1="39" y1="2"  x2="39" y2="6"  stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-                <line x1="17" y1="22" x2="17" y2="26" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-                <line x1="39" y1="22" x2="39" y2="26" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-                <polyline points="17,21 17,7 28,16 39,7 39,21" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="44" height="28" viewBox="0 0 56 36" fill="none">
+                <line x1="8" y1="4" x2="13" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="10" y1="4" x2="10" y2="28" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <path d="M10,28 Q10,34 18,34" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                <line x1="22" y1="4" x2="26" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="24" y1="4" x2="24" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="22" y1="32" x2="26" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="48" y1="4" x2="52" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="50" y1="4" x2="50" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <line x1="48" y1="32" x2="52" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+                <polyline points="24,4 37,21 50,4" stroke="#4ade80" stroke-width="1.1" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+                <line x1="4" y1="34" x2="53" y2="34" stroke="rgba(74,222,128,0.2)" stroke-width="0.5"/>
               </svg>
               <div class="ft-name">Jose Simon Muck</div>
             </div>
           </div>
         </div>
         <div class="rat">
-          <div class="mono">Rationale</div>
-          <p>The M is presented within a ruled frame — two precise horizontal lines that give the letter context and authority. The tick marks at each stem position are borrowed from technical drawing and measurement instruments: they signal that this mark was produced by a system, not improvised. The whole composition reads like a publisher's colophon, a chapter heading mark, or the imprint on the title page of a premium book.</p>
-          <p>Symbolism: the ruled container communicates structure, reliability, and discipline. The M is the author; the rules are the standards it adheres to. This mark says "editorial authority" more clearly than any other direction here. Note that its wider format makes it slightly different from the others — it's a horizontal mark, not a square one, which gives it a distinct character.</p>
-          <div class="uses">
-            <span class="tag">Article header</span>
-            <span class="tag">Report cover</span>
-            <span class="tag">Presentation footer</span>
-            <span class="tag">Document stamp</span>
+          <div class="mono">Rationale &amp; Symbolism</div>
+          <p>Two letters built to a shared system. The slab terminals on every stem end signal that this was constructed rather than typed — the same move used on the title pages of academic publications and legal documents. The optical weight differential (heavier stems, lighter inner diagonal) is borrowed from premium type design. The hairline baseline rule at the foot of both letters ties the pair into a single unit without enclosing them in a container.</p>
+          <div class="rat-row">
+            <div class="rat-col">
+              <div class="rat-col-label">Strengths</div>
+              <div class="tags">
+                <span class="tag">Readable</span>
+                <span class="tag">Formal authority</span>
+                <span class="tag">Scales cleanly</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Weaknesses</div>
+              <div class="tags">
+                <span class="tag tag-dim">Wider footprint</span>
+                <span class="tag tag-dim">Less "personal"</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Works best</div>
+              <div class="tags">
+                <span class="tag">Reports</span>
+                <span class="tag">Letterhead</span>
+                <span class="tag">Business card</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
 
-  <!-- ═══════════════════════════════════════════════
-       CONCEPT 4 — THE DIAMOND SEAL
-       M inside a diamond. Angular. Architectural.
-  ════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+       CONCEPT 4 — THE SUPERIOR MARK
+       Small J (superscript) flows into a large M.
+       The J is the author; the M is the surname seal.
+  ═══════════════════════════════════════════════ -->
   <div class="concept">
     <div class="concept-hd">
       <div class="cn">4</div>
       <div>
-        <div class="concept-name">The Diamond Seal</div>
-        <div class="concept-sub">Contained · Angular · Personal signet</div>
+        <div class="concept-name">The Superior Mark</div>
+        <div class="concept-sub">Hierarchy · Author's attribution · Editorial</div>
       </div>
     </div>
     <div class="concept-body">
-
       <div class="ld">
         <!--
-          The M is inscribed in a diamond (rotated square).
-          The M's valley sits exactly at the center of the diamond — a precise,
-          intentional relationship. The diamond is more distinctive than a circle:
-          it references the signet ring, the architect's stamp, the compass rose.
+          Small J (upper-left, ~50% scale of M):
+          x=8, y=4–14, hook Q(8,19)(13,19).
+          The hook endpoint (13,19) IS the top-left
+          corner of the large M below.
+          Large M: left stem x=13, right stem x=44,
+          valley (28.5, 31), baseline y=40.
+          Same stroke weight throughout — pen continuity.
         -->
-        <svg width="108" height="108" viewBox="0 0 44 44" fill="none">
-          <!-- Ghost ring (depth) -->
-          <polygon points="22,1.5 42.5,22 22,42.5 1.5,22"
-            stroke="rgba(74,222,128,0.07)" stroke-width="4" fill="none"/>
-          <!-- Diamond outline -->
-          <polygon points="22,2 42,22 22,42 2,22"
-            stroke="rgba(74,222,128,0.48)" stroke-width="0.75" fill="none"/>
-          <!-- M: valley at exact center (22,22) -->
-          <polyline points="13,31 13,13 22,22 31,13 31,31"
-            stroke="#4ade80" stroke-width="1.6" fill="none"
+        <svg width="115" height="105" viewBox="0 0 46 42" fill="none">
+          <!-- Small J (superior) -->
+          <path d="M8,4 L8,14 Q8,19 13,19"
+            stroke="#4ade80" stroke-width="1.4" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Large M — left stem top is exactly where J hook ends -->
+          <path d="M13,40 L13,19 L28,31 L44,19 L44,40"
+            stroke="#4ade80" stroke-width="1.4" fill="none"
             stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-
       <div>
         <div class="ctx-row">
           <div class="ctx">
             <div class="ctx-lbl">Navigation</div>
             <div class="nav-mock">
-              <svg width="38" height="38" viewBox="0 0 44 44" fill="none">
-                <polygon points="22,1.5 42.5,22 22,42.5 1.5,22" stroke="rgba(74,222,128,0.07)" stroke-width="4" fill="none"/>
-                <polygon points="22,2 42,22 22,42 2,22" stroke="rgba(74,222,128,0.48)" stroke-width="0.75" fill="none"/>
-                <polyline points="13,31 13,13 22,22 31,13 31,31" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="40" height="38" viewBox="0 0 46 42" fill="none">
+                <path d="M8,4 L8,14 Q8,19 13,19" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13,40 L13,19 L28,31 L44,19 L44,40" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <div class="m-links">
-                <div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div>
-              </div>
+              <div class="m-links"><div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div></div>
             </div>
           </div>
           <div class="ctx">
             <div class="ctx-lbl">Footer</div>
             <div class="ft-mock">
-              <svg width="34" height="34" viewBox="0 0 44 44" fill="none">
-                <polygon points="22,1.5 42.5,22 22,42.5 1.5,22" stroke="rgba(74,222,128,0.07)" stroke-width="4" fill="none"/>
-                <polygon points="22,2 42,22 22,42 2,22" stroke="rgba(74,222,128,0.48)" stroke-width="0.75" fill="none"/>
-                <polyline points="13,31 13,13 22,22 31,13 31,31" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="36" height="33" viewBox="0 0 46 42" fill="none">
+                <path d="M8,4 L8,14 Q8,19 13,19" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13,40 L13,19 L28,31 L44,19 L44,40" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <div class="ft-name">Jose Simon Muck</div>
             </div>
           </div>
         </div>
         <div class="rat">
-          <div class="mono">Rationale</div>
-          <p>The diamond is chosen over the circle deliberately. Circles suggest openness, inclusiveness, technology. Diamonds suggest precision, value, and directional intention. The contained mark has a long history in personal seals: signet rings, architect's stamps, engineer's marks, surveyor's reference points. The geometry here is exact: the M's valley sits at the precise center of the diamond — the two forms share a center point.</p>
-          <p>Symbolism: the diamond container communicates "I put my name on this." It is the visual equivalent of a seal on a document — the mark of authorship that gives weight to what follows. The angular container and the clean M inside create a tension between the geometric and the personal that feels contemporary without feeling like a startup.</p>
-          <div class="uses">
-            <span class="tag">Personal seal</span>
-            <span class="tag">Report watermark</span>
-            <span class="tag">Digital signature</span>
-            <span class="tag">Book spine</span>
+          <div class="mono">Rationale &amp; Symbolism</div>
+          <p>The J is positioned as a superior mark — smaller, higher, leading the eye into the M below. The hook of the J ends exactly where the M's left stem begins: the two letters share a single point, making this a connected mark rather than two separate glyphs. This arrangement mirrors how authors are attributed in editorial tradition: the given-name initial is the intimate mark, the surname initial is the public one. The J says "this is personal." The M says "this is mine."</p>
+          <div class="rat-row">
+            <div class="rat-col">
+              <div class="rat-col-label">Strengths</div>
+              <div class="tags">
+                <span class="tag">Distinctive</span>
+                <span class="tag">Editorial</span>
+                <span class="tag">Very personal</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Weaknesses</div>
+              <div class="tags">
+                <span class="tag tag-dim">Asymmetric</span>
+                <span class="tag tag-dim">J small at favicon</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Works best</div>
+              <div class="tags">
+                <span class="tag">Articles</span>
+                <span class="tag">LinkedIn banner</span>
+                <span class="tag">Book cover</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
 
-  <!-- ═══════════════════════════════════════════════
-       CONCEPT 5 — THE BLOCK MARK
-       Heavy weight. Letterpress quality. Conviction.
-  ════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+       CONCEPT 5 — THE OVAL SEAL
+       JM inside a horizontal ellipse — the shape of
+       a personal seal, pen label, locket engraving.
+  ═══════════════════════════════════════════════ -->
   <div class="concept">
     <div class="concept-hd">
       <div class="cn">5</div>
       <div>
-        <div class="concept-name">The Block Mark</div>
-        <div class="concept-sub">Weight · Conviction · Letterpress quality</div>
+        <div class="concept-name">The Oval Seal</div>
+        <div class="concept-sub">Contained · Personal seal · Timeless</div>
       </div>
     </div>
     <div class="concept-body">
-
       <div class="ld">
         <!--
-          The M as a heavy mark — thick strokes, flat butt caps, miter join at valley.
-          The weight of the strokes communicates confidence and permanence.
-          An impression layer underneath adds the slight "ink spread" of a letterpress.
-          This is the M as a stamp — the most emphatic, most physical of the five.
+          Horizontal ellipse: cx=28, cy=19, rx=25, ry=15.
+          J inside left half: vertical x=15, y=9–25,
+          top slab (13,9)–(17,9), hook Q(15,30)(21,30).
+          Thin vertical divider at x=22.
+          M inside right half: stems x=25 & x=41, valley (33,19).
+          Ghost ellipse for depth.
         -->
-        <svg width="120" height="108" viewBox="0 0 40 36" fill="none">
-          <!-- Impression layer: simulates ink spread beneath the mark -->
-          <polyline points="5.3,33.3 5.3,3.3 20,21.3 34.7,3.3 34.7,33.3"
-            stroke="rgba(74,222,128,0.14)" stroke-width="6"
-            fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
-          <!-- Main mark: heavy, precise, flat ends -->
-          <polyline points="5,33 5,3 20,21 35,3 35,33"
-            stroke="#4ade80" stroke-width="3.8"
-            fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"
-            opacity="0.92"/>
+        <svg width="145" height="78" viewBox="0 0 56 38" fill="none">
+          <!-- Ghost ellipse (depth layer) -->
+          <ellipse cx="28" cy="19" rx="25" ry="15" stroke="rgba(74,222,128,0.07)" stroke-width="3.5" fill="none"/>
+          <!-- Outer ellipse -->
+          <ellipse cx="28" cy="19" rx="25" ry="15" stroke="rgba(74,222,128,0.48)" stroke-width="0.75" fill="none"/>
+          <!-- Thin center divider -->
+          <line x1="22" y1="8" x2="22" y2="30" stroke="rgba(74,222,128,0.22)" stroke-width="0.5"/>
+          <!-- J: vertical + top slab + hook -->
+          <line x1="13" y1="9"  x2="17" y2="9"  stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+          <line x1="15" y1="9"  x2="15" y2="25" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+          <path d="M15,25 Q15,31 21,31" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <!-- M: left stem, inner V, right stem -->
+          <line x1="25" y1="10" x2="25" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+          <polyline points="25,10 33,19 41,10" stroke="#4ade80" stroke-width="1.0" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+          <line x1="41" y1="10" x2="41" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
         </svg>
       </div>
-
       <div>
         <div class="ctx-row">
           <div class="ctx">
             <div class="ctx-lbl">Navigation</div>
             <div class="nav-mock">
-              <svg width="40" height="36" viewBox="0 0 40 36" fill="none">
-                <polyline points="5.3,33.3 5.3,3.3 20,21.3 34.7,3.3 34.7,33.3" stroke="rgba(74,222,128,0.14)" stroke-width="6" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
-                <polyline points="5,33 5,3 20,21 35,3 35,33" stroke="#4ade80" stroke-width="3.8" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20" opacity="0.92"/>
+              <svg width="52" height="28" viewBox="0 0 56 38" fill="none">
+                <ellipse cx="28" cy="19" rx="25" ry="15" stroke="rgba(74,222,128,0.07)" stroke-width="3.5" fill="none"/>
+                <ellipse cx="28" cy="19" rx="25" ry="15" stroke="rgba(74,222,128,0.48)" stroke-width="0.75" fill="none"/>
+                <line x1="22" y1="8" x2="22" y2="30" stroke="rgba(74,222,128,0.22)" stroke-width="0.5"/>
+                <line x1="13" y1="9" x2="17" y2="9" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+                <line x1="15" y1="9" x2="15" y2="25" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+                <path d="M15,25 Q15,31 21,31" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                <line x1="25" y1="10" x2="25" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+                <polyline points="25,10 33,19 41,10" stroke="#4ade80" stroke-width="1.0" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+                <line x1="41" y1="10" x2="41" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
               </svg>
-              <div class="m-links">
-                <div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div>
-              </div>
+              <div class="m-links"><div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div></div>
             </div>
           </div>
           <div class="ctx">
             <div class="ctx-lbl">Footer</div>
             <div class="ft-mock">
-              <svg width="36" height="32" viewBox="0 0 40 36" fill="none">
-                <polyline points="5.3,33.3 5.3,3.3 20,21.3 34.7,3.3 34.7,33.3" stroke="rgba(74,222,128,0.14)" stroke-width="6" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
-                <polyline points="5,33 5,3 20,21 35,3 35,33" stroke="#4ade80" stroke-width="3.8" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20" opacity="0.92"/>
+              <svg width="46" height="25" viewBox="0 0 56 38" fill="none">
+                <ellipse cx="28" cy="19" rx="25" ry="15" stroke="rgba(74,222,128,0.07)" stroke-width="3.5" fill="none"/>
+                <ellipse cx="28" cy="19" rx="25" ry="15" stroke="rgba(74,222,128,0.48)" stroke-width="0.75" fill="none"/>
+                <line x1="22" y1="8" x2="22" y2="30" stroke="rgba(74,222,128,0.22)" stroke-width="0.5"/>
+                <line x1="13" y1="9" x2="17" y2="9" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+                <line x1="15" y1="9" x2="15" y2="25" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+                <path d="M15,25 Q15,31 21,31" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                <line x1="25" y1="10" x2="25" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+                <polyline points="25,10 33,19 41,10" stroke="#4ade80" stroke-width="1.0" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+                <line x1="41" y1="10" x2="41" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
               </svg>
               <div class="ft-name">Jose Simon Muck</div>
             </div>
           </div>
         </div>
         <div class="rat">
-          <div class="mono">Rationale</div>
-          <p>The M rendered at maximum visual weight. Where the other four concepts use fine or medium strokes, this one commits fully to the letterform as a physical object — the kind of mark you find on a letterpress print, a linocut, or a metal type block. The flat end-caps and miter join at the valley give it the quality of something pressed into paper rather than drawn on it. The subtle impression layer simulates the slight ink spread of a real stamp.</p>
-          <p>Symbolism: weight equals conviction. This is the M of someone who has no hesitation about who they are. It is also the most immediately recognizable of the five — at favicon size, at large size, in print or screen, the mark holds its identity with no ambiguity. Not the most delicate choice, but possibly the most memorable.</p>
-          <div class="uses">
-            <span class="tag">Favicon</span>
-            <span class="tag">Presentation stamp</span>
-            <span class="tag">Physical print</span>
-            <span class="tag">Bold contexts</span>
+          <div class="mono">Rationale &amp; Symbolism</div>
+          <p>The horizontal oval is the historic shape of the personal seal — not the circular stamp (too corporate) or the square (too institutional) but the oval: the form of a signet ring, a wax seal, a name plate on a pen or a leather notebook. The J and M sit divided by a hairline rule inside the ellipse, each letter occupying its half with breathing room. The oval contains and completes the mark — it says "this is the full name, not just an initial."</p>
+          <div class="rat-row">
+            <div class="rat-col">
+              <div class="rat-col-label">Strengths</div>
+              <div class="tags">
+                <span class="tag">Seal quality</span>
+                <span class="tag">Both initials clear</span>
+                <span class="tag">Timeless</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Weaknesses</div>
+              <div class="tags">
+                <span class="tag tag-dim">Wide format</span>
+                <span class="tag tag-dim">Detail at 16px</span>
+              </div>
+            </div>
+            <div class="rat-col">
+              <div class="rat-col-label">Works best</div>
+              <div class="tags">
+                <span class="tag">Email signature</span>
+                <span class="tag">Stationery</span>
+                <span class="tag">Strategy reports</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
 
-  <!-- ═══════════════════════════════════════════════
-       COMPARISON STRIP
-  ════════════════════════════════════════════════ -->
+  <!-- comparison strip -->
   <div class="cmp">
-    <div class="mono" style="margin-bottom:2rem">All five at the same height</div>
+    <div class="mono" style="margin-bottom:2rem">Side by side · Same rendered height</div>
     <div class="cmp-row">
 
       <div class="cmp-item">
-        <svg width="60" height="54" viewBox="0 0 40 36" fill="none">
-          <line x1="2" y1="4" x2="6" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <line x1="34" y1="4" x2="38" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <line x1="4" y1="4" x2="4" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <line x1="36" y1="4" x2="36" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <line x1="2" y1="33" x2="6" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <line x1="34" y1="33" x2="38" y2="33" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
-          <polyline points="4,4 20,21 36,4" stroke="#4ade80" stroke-width="1.1" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+        <svg width="62" height="43" viewBox="0 0 52 36" fill="none">
+          <path d="M8,4 L8,28 Q8,36 18,28 L18,4" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18,4 L33,21 L48,4 L48,32" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div class="cmp-cap">01 · Constructed</div>
+        <div class="cmp-cap">01 · Loop</div>
       </div>
 
       <div class="cmp-div"></div>
 
       <div class="cmp-item">
-        <svg width="55" height="57" viewBox="0 0 40 42" fill="none">
-          <path d="M5,4 L5,32 Q5,39 14,39" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M5,4 L20,21 L35,4 L35,32" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="55" height="50" viewBox="0 0 46 42" fill="none">
+          <line x1="5" y1="5" x2="5" y2="30" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+          <line x1="41" y1="5" x2="41" y2="30" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+          <polyline points="5,5 23,21 41,5" stroke="#4ade80" stroke-width="0.9" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+          <line x1="23" y1="2" x2="23" y2="34" stroke="#4ade80" stroke-width="1.7" stroke-linecap="butt"/>
+          <path d="M23,34 Q23,41 33,41" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round"/>
         </svg>
-        <div class="cmp-cap">02 · JM Monogram</div>
+        <div class="cmp-cap">02 · Inscription</div>
       </div>
 
       <div class="cmp-div"></div>
 
-      <div class="cmp-item" style="flex:1.5">
-        <svg width="80" height="40" viewBox="0 0 56 28" fill="none">
-          <line x1="2" y1="4" x2="54" y2="4" stroke="rgba(74,222,128,0.38)" stroke-width="0.75"/>
-          <line x1="2" y1="24" x2="54" y2="24" stroke="rgba(74,222,128,0.38)" stroke-width="0.75"/>
-          <line x1="17" y1="2" x2="17" y2="6" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-          <line x1="39" y1="2" x2="39" y2="6" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-          <line x1="17" y1="22" x2="17" y2="26" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-          <line x1="39" y1="22" x2="39" y2="26" stroke="rgba(74,222,128,0.28)" stroke-width="0.75"/>
-          <polyline points="17,21 17,7 28,16 39,7 39,21" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="cmp-item" style="flex:1.4">
+        <svg width="68" height="43" viewBox="0 0 56 36" fill="none">
+          <line x1="8" y1="4" x2="13" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="10" y1="4" x2="10" y2="28" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <path d="M10,28 Q10,34 18,34" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <line x1="22" y1="4" x2="26" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="24" y1="4" x2="24" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="22" y1="32" x2="26" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="48" y1="4" x2="52" y2="4" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="50" y1="4" x2="50" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <line x1="48" y1="32" x2="52" y2="32" stroke="#4ade80" stroke-width="1.8" stroke-linecap="butt"/>
+          <polyline points="24,4 37,21 50,4" stroke="#4ade80" stroke-width="1.1" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+          <line x1="4" y1="34" x2="53" y2="34" stroke="rgba(74,222,128,0.2)" stroke-width="0.5"/>
         </svg>
-        <div class="cmp-cap">03 · Imprint</div>
+        <div class="cmp-cap">03 · Exec pair</div>
       </div>
 
       <div class="cmp-div"></div>
 
       <div class="cmp-item">
-        <svg width="54" height="54" viewBox="0 0 44 44" fill="none">
-          <polygon points="22,1.5 42.5,22 22,42.5 1.5,22" stroke="rgba(74,222,128,0.07)" stroke-width="4" fill="none"/>
-          <polygon points="22,2 42,22 22,42 2,22" stroke="rgba(74,222,128,0.48)" stroke-width="0.75" fill="none"/>
-          <polyline points="13,31 13,13 22,22 31,13 31,31" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="55" height="50" viewBox="0 0 46 42" fill="none">
+          <path d="M8,4 L8,14 Q8,19 13,19" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13,40 L13,19 L28,31 L44,19 L44,40" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div class="cmp-cap">04 · Diamond</div>
+        <div class="cmp-cap">04 · Superior</div>
       </div>
 
       <div class="cmp-div"></div>
 
-      <div class="cmp-item">
-        <svg width="60" height="54" viewBox="0 0 40 36" fill="none">
-          <polyline points="5.3,33.3 5.3,3.3 20,21.3 34.7,3.3 34.7,33.3" stroke="rgba(74,222,128,0.14)" stroke-width="6" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
-          <polyline points="5,33 5,3 20,21 35,3 35,33" stroke="#4ade80" stroke-width="3.8" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20" opacity="0.92"/>
+      <div class="cmp-item" style="flex:1.4">
+        <svg width="68" height="37" viewBox="0 0 56 38" fill="none">
+          <ellipse cx="28" cy="19" rx="25" ry="15" stroke="rgba(74,222,128,0.07)" stroke-width="3.5" fill="none"/>
+          <ellipse cx="28" cy="19" rx="25" ry="15" stroke="rgba(74,222,128,0.48)" stroke-width="0.75" fill="none"/>
+          <line x1="22" y1="8" x2="22" y2="30" stroke="rgba(74,222,128,0.22)" stroke-width="0.5"/>
+          <line x1="13" y1="9" x2="17" y2="9" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+          <line x1="15" y1="9" x2="15" y2="25" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+          <path d="M15,25 Q15,31 21,31" stroke="#4ade80" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <line x1="25" y1="10" x2="25" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
+          <polyline points="25,10 33,19 41,10" stroke="#4ade80" stroke-width="1.0" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="20"/>
+          <line x1="41" y1="10" x2="41" y2="28" stroke="#4ade80" stroke-width="1.5" stroke-linecap="butt"/>
         </svg>
-        <div class="cmp-cap">05 · Block</div>
+        <div class="cmp-cap">05 · Oval seal</div>
       </div>
 
       <div class="cmp-div"></div>
 
-      <!-- Current mark at reduced opacity -->
-      <div class="cmp-item" style="opacity:0.3">
+      <div class="cmp-item" style="opacity:0.25">
         <svg width="60" height="39" viewBox="0 0 40 26" fill="none">
           <path d="M2 24 L14 8 L20 14 L26 6 L38 24" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
           <path d="M14 24 L20 16 L26 24" stroke="rgba(74,222,128,0.35)" stroke-width="1" fill="none"/>
@@ -725,10 +710,8 @@
 
 </div>
 
-<!-- ─── CTA ──────────────────────────────────────────────── -->
 <div class="cta">
-  <p>Five directions. No changes made to the site.<br>
-  <strong>Reply with a number (1–5)</strong>, a combination to refine, or direction on what to adjust. The chosen mark will be applied globally to nav, footer, and favicon across all pages.</p>
+  <p>Five directions — no changes to the site. <strong>Reply with a number (1–5)</strong> to apply globally, or describe what you'd like to adjust or combine.</p>
 </div>
 
 </body>
