@@ -16,6 +16,18 @@
    IMPORTANT: No analytics or tracking scripts should be loaded
    before this module has confirmed analytics consent.
 ============================================================================= */
+
+/* ── Vercel Web Analytics — queue stub ─────────────────────────────────────
+   Initialise window.va and window.vaq before the analytics script loads.
+   This queues any va() calls made before the script is dynamically injected,
+   so they are replayed once the script loads after consent is granted.
+   See: https://vercel.com/docs/analytics/quickstart#add-@vercel/analytics-to-your-project
+   Script path: /_vercel/insights/script.js
+   Auto-injection in Vercel dashboard MUST remain disabled — gating is
+   handled exclusively by this consent manager.
+   ─────────────────────────────────────────────────────────────────────────── */
+window.va  = window.va  || function () { (window.vaq = window.vaq || []).push(arguments); };
+
 (function () {
   'use strict';
 
@@ -50,8 +62,9 @@
     if (_analyticsLoaded) return;
     _analyticsLoaded = true;
     /* Vercel Web Analytics — injected only after explicit consent.
-       If auto-injection is enabled in the Vercel dashboard, disable it
-       there and rely on this gated script instead. */
+       Auto-injection in the Vercel dashboard MUST be disabled for this
+       consent gate to work. The script self-initialises window.va and
+       replays any calls queued in window.vaq by the stub above. */
     var s = document.createElement('script');
     s.defer = true;
     s.src   = '/_vercel/insights/script.js';
