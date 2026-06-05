@@ -48,23 +48,12 @@ function _dbg() {
    ─────────────────────────────────────────────────────────────────────────── */
 window.va  = window.va  || function () { (window.vaq = window.vaq || []).push(arguments); };
 
-/* ── Google Analytics 4 — Consent Mode v2 + dataLayer stub ────────────────
-   Must run before gtag.js loads. Sets all consent to denied by default.
-   analytics_storage is updated to 'granted' only after explicit user consent.
-   Advertising-related consent is intentionally kept denied (not used).
+/* ── Google Analytics 4 — Consent Mode v2 ─────────────────────────────────
+   The gtag.js script and consent defaults are embedded in every page <head>.
+   consent.js only needs to call gtag('consent', 'update', ...) after the
+   user grants analytics consent. No script injection required here.
    See: https://developers.google.com/tag-platform/security/guides/consent
    ─────────────────────────────────────────────────────────────────────────── */
-window.dataLayer = window.dataLayer || [];
-function gtag() { window.dataLayer.push(arguments); }
-gtag('js', new Date());
-gtag('consent', 'default', {
-  'analytics_storage':  'denied',
-  'ad_storage':         'denied',
-  'ad_user_data':       'denied',
-  'ad_personalization': 'denied',
-  'wait_for_update':    500
-});
-_dbg('Consent Mode default: all denied');
 
 (function () {
   'use strict';
@@ -109,30 +98,21 @@ _dbg('Consent Mode default: all denied');
     _dbg('Vercel Analytics script injected:', VERCEL_SCRIPT_PATH);
   }
 
-  var _ga4Loaded = false;
+  var _ga4Upgraded = false;
   function loadGA4() {
-    if (_ga4Loaded) return;
-    _ga4Loaded = true;
-    /* Google Analytics 4 — injected only after explicit consent.
-       Consent Mode is updated to 'granted' before the script is loaded
-       so GA4 operates with full consent from the first hit. */
+    if (_ga4Upgraded) return;
+    _ga4Upgraded = true;
+    /* gtag.js is already embedded in every page <head> with Consent Mode
+       defaults set to denied. This call upgrades analytics_storage to
+       'granted' so GA4 begins full tracking for this session. */
     gtag('consent', 'update', { 'analytics_storage': 'granted' });
-    _dbg('Consent Mode update: analytics_storage → granted');
-
-    var s = document.createElement('script');
-    s.async = true;
-    s.src   = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
-    document.head.appendChild(s);
-
-    /* Config queued — fires page_view once the script loads */
-    gtag('config', GA_MEASUREMENT_ID);
-    _dbg('GA4 script injected, config queued for:', GA_MEASUREMENT_ID);
+    _dbg('GA4 consent updated: analytics_storage → granted');
   }
 
-  /* Revoke consent for already-loaded GA4 (user changed preference) */
+  /* Revoke GA4 consent — gtag.js stays loaded but stops tracking */
   function revokeGA4() {
     gtag('consent', 'update', { 'analytics_storage': 'denied' });
-    _dbg('Consent Mode update: analytics_storage → denied (preference revoked)');
+    _dbg('GA4 consent updated: analytics_storage → denied');
   }
 
   function loadAnalytics() {

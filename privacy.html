@@ -2,6 +2,21 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) — Consent Mode v2 (defaults: all denied) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage':  'denied',
+    'ad_storage':         'denied',
+    'ad_user_data':       'denied',
+    'ad_personalization': 'denied',
+    'wait_for_update':    500
+  });
+  gtag('js', new Date());
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9FH2DWH9DV"></script>
+<script>gtag('config', 'G-9FH2DWH9DV');</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.svg">
 <link rel="canonical" href="https://josemuck.com/privacy.html">
@@ -355,11 +370,14 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
         Privacy Framework zertifiziert (Angemessenheitsbeschluss der EU-Kommission).
       </p>
       <p>
-        Wir verwenden Google Consent Mode v2: GA4 wird nur geladen, nachdem Sie Ihre
-        ausdrückliche Einwilligung erteilt haben. Vor der Einwilligung ist
-        <code>analytics_storage</code> standardmäßig auf <code>denied</code> gesetzt;
-        werbebezogene Speicherung (<code>ad_storage</code>, <code>ad_user_data</code>,
-        <code>ad_personalization</code>) ist dauerhaft deaktiviert.
+        Wir verwenden Google Consent Mode v2. Das GA4-Skript wird auf jeder Seite
+        geladen, setzt jedoch vor einer Einwilligung standardmäßig alle
+        Zustimmungssignale auf <code>denied</code>. In diesem Zustand werden keine
+        Cookies gesetzt und keine personenbezogenen Daten verarbeitet.
+        Erst nach Ihrer ausdrücklichen Einwilligung wird <code>analytics_storage</code>
+        auf <code>granted</code> gesetzt und die vollständige Nutzungsmessung aktiviert.
+        Werbebezogene Signale (<code>ad_storage</code>, <code>ad_user_data</code>,
+        <code>ad_personalization</code>) bleiben dauerhaft deaktiviert.
       </p>
       <p>
         Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Ihre
@@ -385,11 +403,13 @@ footer{background:var(--graphite);border-top:1px solid var(--border);padding:2re
         (European Commission adequacy decision).
       </p>
       <p>
-        We implement Google Consent Mode v2: GA4 is only loaded after you have given
-        explicit consent. Before consent, <code>analytics_storage</code> is set to
-        <code>denied</code> by default; advertising-related storage
-        (<code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>)
-        is permanently disabled.
+        We implement Google Consent Mode v2. The GA4 script is loaded on every page,
+        but all consent signals default to <code>denied</code> before any user
+        interaction. In this state, no cookies are set and no personal data is
+        processed. Only after you grant explicit consent is <code>analytics_storage</code>
+        updated to <code>granted</code>, enabling full usage measurement. Advertising-related
+        signals (<code>ad_storage</code>, <code>ad_user_data</code>,
+        <code>ad_personalization</code>) are permanently disabled.
       </p>
       <p>
         Legal basis: Art. 6(1)(a) GDPR (consent). You may withdraw consent at any time
