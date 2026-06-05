@@ -8,31 +8,69 @@
 
    Consent categories:
      essential  — always true; required for site operation
-     analytics  — optional; gates Vercel Web Analytics
+     analytics  — optional; gates Vercel Web Analytics + Google Analytics 4
 
    localStorage key: "jsm_consent"
-   Version: "1.0" — bump when consent purposes change materially.
+   Version: "1.1" — bumped when GA4 was added (2026-06)
+   Previous version "1.0" stored consents are invalidated to re-prompt users.
 
    IMPORTANT: No analytics or tracking scripts should be loaded
    before this module has confirmed analytics consent.
 ============================================================================= */
 
+/* ── Analytics configuration ───────────────────────────────────────────────
+   Single location for all analytics identifiers.
+   To change a script path or measurement ID, edit only this section.
+   ─────────────────────────────────────────────────────────────────────────── */
+var GA_MEASUREMENT_ID  = 'G-9FH2DWH9DV';
+var VERCEL_SCRIPT_PATH = '/_vercel/insights/script.js';
+
+/* ── Debug mode ────────────────────────────────────────────────────────────
+   Enable via URL: ?debug_analytics=true
+   Or by setting DEBUG_ANALYTICS = true below and redeploying (dev only).
+   When active, logs all consent and analytics events to the browser console.
+   ─────────────────────────────────────────────────────────────────────────── */
+var DEBUG_ANALYTICS = /[?&]debug_analytics=true/.test(
+  typeof location !== 'undefined' ? location.search : ''
+);
+function _dbg() {
+  if (DEBUG_ANALYTICS) {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift('[Analytics]');
+    console.log.apply(console, args);
+  }
+}
+
 /* ── Vercel Web Analytics — queue stub ─────────────────────────────────────
-   Initialise window.va and window.vaq before the analytics script loads.
-   This queues any va() calls made before the script is dynamically injected,
-   so they are replayed once the script loads after consent is granted.
-   See: https://vercel.com/docs/analytics/quickstart#add-@vercel/analytics-to-your-project
+   Queues va() calls made before the gated script loads.
    Script path: /_vercel/insights/script.js
-   Auto-injection in Vercel dashboard MUST remain disabled — gating is
-   handled exclusively by this consent manager.
+   See: https://vercel.com/docs/analytics/quickstart
    ─────────────────────────────────────────────────────────────────────────── */
 window.va  = window.va  || function () { (window.vaq = window.vaq || []).push(arguments); };
+
+/* ── Google Analytics 4 — Consent Mode v2 + dataLayer stub ────────────────
+   Must run before gtag.js loads. Sets all consent to denied by default.
+   analytics_storage is updated to 'granted' only after explicit user consent.
+   Advertising-related consent is intentionally kept denied (not used).
+   See: https://developers.google.com/tag-platform/security/guides/consent
+   ─────────────────────────────────────────────────────────────────────────── */
+window.dataLayer = window.dataLayer || [];
+function gtag() { window.dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('consent', 'default', {
+  'analytics_storage':  'denied',
+  'ad_storage':         'denied',
+  'ad_user_data':       'denied',
+  'ad_personalization': 'denied',
+  'wait_for_update':    500
+});
+_dbg('Consent Mode default: all denied');
 
 (function () {
   'use strict';
 
   var STORAGE_KEY = 'jsm_consent';
-  var VERSION     = '1.0';
+  var VERSION     = '1.1';  /* bumped — invalidates v1.0 consent; re-prompts returning visitors */
 
   /* ── Storage helpers ───────────────────────────────────────────────────── */
   function readConsent() {
@@ -56,19 +94,56 @@ window.va  = window.va  || function () { (window.vaq = window.vaq || []).push(ar
     } catch (e) {}
   }
 
-  /* ── Analytics gating ──────────────────────────────────────────────────── */
-  var _analyticsLoaded = false;
-  function loadAnalytics() {
-    if (_analyticsLoaded) return;
-    _analyticsLoaded = true;
+  /* ── Analytics loaders ─────────────────────────────────────────────────── */
+  var _vercelLoaded = false;
+  function loadVercel() {
+    if (_vercelLoaded) return;
+    _vercelLoaded = true;
     /* Vercel Web Analytics — injected only after explicit consent.
-       Auto-injection in the Vercel dashboard MUST be disabled for this
-       consent gate to work. The script self-initialises window.va and
-       replays any calls queued in window.vaq by the stub above. */
+       Auto-injection in the Vercel dashboard MUST remain disabled.
+       The script self-initialises window.va and replays window.vaq. */
     var s = document.createElement('script');
     s.defer = true;
-    s.src   = '/_vercel/insights/script.js';
+    s.src   = VERCEL_SCRIPT_PATH;
     document.head.appendChild(s);
+    _dbg('Vercel Analytics script injected:', VERCEL_SCRIPT_PATH);
+  }
+
+  var _ga4Loaded = false;
+  function loadGA4() {
+    if (_ga4Loaded) return;
+    _ga4Loaded = true;
+    /* Google Analytics 4 — injected only after explicit consent.
+       Consent Mode is updated to 'granted' before the script is loaded
+       so GA4 operates with full consent from the first hit. */
+    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    _dbg('Consent Mode update: analytics_storage → granted');
+
+    var s = document.createElement('script');
+    s.async = true;
+    s.src   = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+
+    /* Config queued — fires page_view once the script loads */
+    gtag('config', GA_MEASUREMENT_ID);
+    _dbg('GA4 script injected, config queued for:', GA_MEASUREMENT_ID);
+  }
+
+  /* Revoke consent for already-loaded GA4 (user changed preference) */
+  function revokeGA4() {
+    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+    _dbg('Consent Mode update: analytics_storage → denied (preference revoked)');
+  }
+
+  function loadAnalytics() {
+    loadVercel();
+    loadGA4();
+  }
+
+  function revokeAnalytics() {
+    revokeGA4();
+    /* Vercel has no consent API — the script is already loaded.
+       It will not be injected again on future page loads (stored consent is false). */
   }
 
   /* ── CSS ───────────────────────────────────────────────────────────────── */
@@ -150,9 +225,10 @@ window.va  = window.va  || function () { (window.vaq = window.vaq || []).push(ar
     '<div class="cb-inner">',
     '<div class="cb-text">',
     '<p class="cb-title">Cookies &amp; Datenschutz</p>',
-    '<p class="cb-body">Diese Website verwendet essentielle Cookies für Ihre Einstellungen ',
-    'sowie optional datenschutzfreundliche Analysen (Vercel Analytics, ohne Drittanbieter-Cookies). ',
-    'This site uses essential cookies for preferences and optional privacy-friendly analytics.',
+    '<p class="cb-body">Diese Website verwendet essentielle Cookies sowie optional ',
+    'Analyse-Dienste (Vercel Analytics, Google Analytics 4). Analysen werden nur nach ',
+    'Ihrer Einwilligung geladen. / This site uses essential cookies and optional analytics ',
+    '(Vercel Analytics, Google Analytics 4). Analytics load only after your consent.',
     '<a href="privacy.html" class="cb-policy-link">Datenschutzerklärung / Privacy Policy</a>',
     '</p></div>',
     '<div class="cb-actions">',
@@ -185,9 +261,10 @@ window.va  = window.va  || function () { (window.vaq = window.vaq || []).push(ar
     '<div class="cs-cat">',
     '<div class="cs-cat-row">',
     '<div><p class="cs-cat-name">Analyse / Analytics</p>',
-    '<p class="cs-cat-desc">Datenschutzfreundliche Nutzungsstatistiken via Vercel Web Analytics. ',
-    'Keine Drittanbieter-Cookies, keine personenbezogenen Daten. / Privacy-friendly usage statistics ',
-    'via Vercel Web Analytics. No third-party cookies, no personal data.</p></div>',
+    '<p class="cs-cat-desc">Nutzungsstatistiken via Vercel Analytics und Google Analytics 4. ',
+    'Ermöglicht Verbesserungen der Website auf Basis aggregierter Daten. / ',
+    'Usage statistics via Vercel Analytics and Google Analytics 4. ',
+    'Enables website improvements based on aggregated data.</p></div>',
     '<label class="cs-toggle-wrap" aria-label="Analytics aktivieren">',
     '<input type="checkbox" id="jsm-analytics-toggle" class="cs-toggle-input">',
     '<span class="cs-toggle-track"><span class="cs-toggle-thumb"></span></span>',
@@ -227,16 +304,25 @@ window.va  = window.va  || function () { (window.vaq = window.vaq || []).push(ar
       loadAnalytics();
       hideBanner();
       hideSettings();
+      _dbg('User accepted all analytics');
     }
     function rejectAll() {
       writeConsent(false);
+      revokeAnalytics();
       hideBanner();
       hideSettings();
+      _dbg('User rejected all analytics');
     }
     function saveSelection() {
       var ok = toggle && toggle.checked;
       writeConsent(ok);
-      if (ok) loadAnalytics();
+      if (ok) {
+        loadAnalytics();
+        _dbg('User saved: analytics ON');
+      } else {
+        revokeAnalytics();
+        _dbg('User saved: analytics OFF');
+      }
       hideBanner();
       hideSettings();
     }
@@ -266,11 +352,17 @@ window.va  = window.va  || function () { (window.vaq = window.vaq || []).push(ar
       getConsent:   readConsent
     };
 
-    /* Show banner only if no stored consent */
+    /* On page load: honour stored consent or show banner */
     var stored = readConsent();
     if (stored) {
-      if (stored.analytics) loadAnalytics();
+      _dbg('Stored consent found:', stored);
+      if (stored.analytics) {
+        loadAnalytics();
+      } else {
+        _dbg('Analytics consent: denied — scripts not loaded');
+      }
     } else {
+      _dbg('No consent stored — showing banner');
       showBanner();
     }
   }

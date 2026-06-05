@@ -245,3 +245,94 @@ All pages include footer links to:
 - `impressum.html` — Impressum
 - `privacy.html` — Datenschutz
 - Cookie-Einstellungen button (opens consent panel via `window.consentManager.openSettings()`)
+
+### Google Analytics 4
+
+**Measurement ID:** `G-9FH2DWH9DV`  
+**Configured in:** `assets/js/consent.js` → `GA_MEASUREMENT_ID` constant (line 2 of configuration block)
+
+#### Implementation pattern
+
+GA4 uses **Google Consent Mode v2** with strict pre-consent gating. The `gtag` function and `dataLayer` are initialised globally in `consent.js` before any user interaction, with all consent defaulting to `denied`. The actual `gtag.js` script is only injected after the user grants analytics consent.
+
+```
+Page loads → consent.js runs
+  │
+  ├─ window.dataLayer initialized
+  ├─ gtag() function defined
+  ├─ gtag('consent', 'default', { all: 'denied' })   ← queued in dataLayer
+  │
+  ├─ User accepts analytics
+  │   ├─ gtag('consent', 'update', { analytics_storage: 'granted' })
+  │   ├─ <script async src="googletagmanager.com/gtag/js?id=G-9FH2DWH9DV"> injected
+  │   └─ gtag('config', 'G-9FH2DWH9DV')  ← queued, fires page_view on script load
+  │
+  └─ User rejects / revokes
+      └─ gtag('consent', 'update', { analytics_storage: 'denied' })
+```
+
+Advertising-related consent (`ad_storage`, `ad_user_data`, `ad_personalization`) is permanently `denied` — not used.
+
+#### Where GA_MEASUREMENT_ID is configured
+
+**One place only:** `assets/js/consent.js`, at the top of the file:
+
+```js
+var GA_MEASUREMENT_ID  = 'G-9FH2DWH9DV';
+```
+
+To change the ID, edit only this line.
+
+#### Debug mode
+
+Add `?debug_analytics=true` to any page URL to enable console logging of all consent events and analytics actions. No code change or redeployment needed.
+
+```
+https://josemuck.com/?debug_analytics=true
+```
+
+Open DevTools → Console. You will see:
+- `[Analytics] Consent Mode default: all denied`
+- `[Analytics] GA4 script injected, config queued for: G-9FH2DWH9DV`
+- `[Analytics] User accepted all analytics`
+- etc.
+
+#### How to validate GA4 using DevTools Network tab
+
+**Before consent — no GA4 requests should appear:**
+1. Open a fresh browser profile (or run `localStorage.removeItem('jsm_consent')` in console)
+2. Open DevTools → Network → filter: `google`
+3. Load any page — verify no requests to `googletagmanager.com` or `google-analytics.com`
+
+**After accepting consent — GA4 loads and fires:**
+1. Click **Accept** on the cookie banner (or accept via Settings)
+2. Network filter `google` → verify:
+   - `gtag/js?id=G-9FH2DWH9DV` — script loaded (HTTP 200)
+   - `google-analytics.com/g/collect` — pageview event sent
+3. Filter `collect` for a cleaner view of GA4 hits
+
+**After rejecting — no GA4 requests:**
+1. Click **Reject** (or toggle Analytics OFF in Settings → Save)
+2. Reload the page
+3. Network filter `google` → no requests
+
+**After revoking consent within a session:**
+When a user turns off analytics mid-session, `gtag('consent', 'update', {analytics_storage: 'denied'})` fires immediately. GA4 will stop sending events for the remainder of the session. Verify via Console debug mode.
+
+**Check consent object:**
+```js
+JSON.parse(localStorage.getItem('jsm_consent'))
+// After accept: { version: "1.1", essential: true, analytics: true, timestamp: "..." }
+// After reject: { version: "1.1", essential: true, analytics: false, timestamp: "..." }
+```
+
+**Verify in GA4 dashboard:**
+1. GA4 → Reports → Realtime
+2. After accepting consent and browsing, realtime events appear within seconds
+3. If no events appear despite accepting: check Network tab for `collect` requests and confirm `analytics_storage: granted` via debug mode
+
+#### Consent version note
+
+The `VERSION` constant in `consent.js` was bumped from `"1.0"` to `"1.1"` when GA4 was introduced. This invalidates previously stored v1.0 consents, causing the cookie banner to re-appear for returning visitors. This is intentional — the analytics scope changed materially (GA4 added).
+
+
